@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-const Home = () => {
+const Home = (props) => {
 
-   render(
+   return(
       <div className="homeBox">
          <h1> This Is Your Home Page</h1>
       

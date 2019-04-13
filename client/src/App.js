@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import Signup from './Signup';
+import Home from "./Home"; 
 import Login from './Login';
 import UserProfile from './UserProfile';
 import axios from 'axios';
+
 
 
 class App extends Component {
@@ -14,7 +16,7 @@ class App extends Component {
       user: null,
       errorMessage: '',
       lockedResult: '',
-      hackerNewsAPI: [],
+      newsApi: [],
     }
     this.liftTokenToState = this.liftTokenToState.bind(this)
     this.checkForLocalToken = this.checkForLocalToken.bind(this)
@@ -56,11 +58,13 @@ class App extends Component {
 
   componentDidMount() {
     this.checkForLocalToken()
-    fetch("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty")
-    .then(results => {
-      console.log(results, "here is your data")
-      return results.json();
-    })
+    let newsApi = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=47b1d9f9ee354c3992a16d4f94dddc69"
+    axios.get(newsApi).then(response => {
+      console.log(response.data.articles)
+      this.setState({
+        news:response.data.articles
+      })
+    }).catch( err => console.log(err))
   }
 
   // data contains user and token
@@ -103,11 +107,13 @@ class App extends Component {
     let contents;
     if (user) {
       contents = (
-        <>
+        <div className="homeBox">
+        
           <UserProfile user={user} logout={this.logout} />
           <p><a onClick={this.handleClick}>Test the protected route...</a></p>
           <p>{this.state.lockedResult}</p>
-        </>
+          {Home}
+        </div>
       )
     } else {
       contents = (
@@ -119,7 +125,7 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <header><h1>Welcome to my Site</h1></header>
+        <header><h1>Stackd</h1></header>
         <div className='content-box'>
           {contents}
         </div>
