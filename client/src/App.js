@@ -135,7 +135,7 @@ class App extends Component {
         <header><h1>Stackd</h1></header>
         <div className='content-box'>
           {contents}
-        </div>
+        </div>  
       </div>
     );
   }
