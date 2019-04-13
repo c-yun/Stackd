@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import Signup from './Signup';
 import Home from "./Home"; 
+import School from "./School"
 import Login from './Login';
 import UserProfile from './UserProfile';
+import {BrowserRouter, Route, Link} from "react-router-dom"
 import axios from 'axios';
 
 
@@ -107,13 +109,18 @@ class App extends Component {
     let contents;
     if (user) {
       contents = (
-        <div className="homeBox">
-        
-          <UserProfile user={user} logout={this.logout} />
-          <p><a onClick={this.handleClick}>Test the protected route...</a></p>
-          <p>{this.state.lockedResult}</p>
-          {Home}
-        </div>
+      <div className="homeBox">
+        <BrowserRouter>
+          <nav>
+            <Link to="/"> Home </Link> | {""}
+            <Link to ="/school"> Boot Camps </Link> | {""}
+          </nav>
+              <UserProfile user={user} logout={this.logout} />
+              <p>{this.state.lockedResult}</p>
+            <Route path ="/" exact render={() => <Home Home={Home} /> }/> 
+            <Route path ="/school" exact render={() => <School School={School} /> } /> 
+        </BrowserRouter> 
+      </div>
       )
     } else {
       contents = (
@@ -128,10 +135,16 @@ class App extends Component {
         <header><h1>Stackd</h1></header>
         <div className='content-box'>
           {contents}
-        </div>
+        </div>  
       </div>
     );
   }
 }
+
+
+
+
+// <Route path='/' exact render={() => (<Home user={this.state.user} logout={this.logout} />)} />
+
 
 export default App;
