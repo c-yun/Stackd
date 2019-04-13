@@ -6,6 +6,7 @@ import UserProfile from './UserProfile';
 import axios from 'axios';
 
 
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -113,7 +114,7 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <header><h1>Welcome to my Site</h1></header>
+        <header><h1>Stackd</h1></header>
         <div className='content-box'>
           {contents}
         </div>
