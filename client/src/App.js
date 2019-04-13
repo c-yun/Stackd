@@ -14,6 +14,7 @@ class App extends Component {
       user: null,
       errorMessage: '',
       lockedResult: '',
+      hackerNewsAPI: [],
     }
     this.liftTokenToState = this.liftTokenToState.bind(this)
     this.checkForLocalToken = this.checkForLocalToken.bind(this)
@@ -55,7 +56,11 @@ class App extends Component {
 
   componentDidMount() {
     this.checkForLocalToken()
-
+    fetch("https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty")
+    .then(results => {
+      console.log(results, "here is your data")
+      return results.json();
+    })
   }
 
   // data contains user and token
