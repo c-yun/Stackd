@@ -8,6 +8,7 @@ import Login from './Login';
 import UserProfile from './UserProfile';
 import {BrowserRouter, Route, Link} from "react-router-dom"
 import axios from 'axios';
+import {schools} from './data/schools';
 
 
 
@@ -19,6 +20,7 @@ class App extends Component {
       user: null,
       errorMessage: '',
       lockedResult: '',
+      bootcamp: {schools}
     }
     this.liftTokenToState = this.liftTokenToState.bind(this)
     this.checkForLocalToken = this.checkForLocalToken.bind(this)
