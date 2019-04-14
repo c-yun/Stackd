@@ -3,6 +3,7 @@ import './App.css';
 import Signup from './Signup';
 import Home from "./Home"; 
 import School from "./School"
+import Trending from "./Trending"
 import Login from './Login';
 import UserProfile from './UserProfile';
 import {BrowserRouter, Route, Link} from "react-router-dom"
@@ -106,14 +107,16 @@ class App extends Component {
           <div className="navBarBox">
             <nav>
               <Link to="/"> Home </Link> | {""}
-              <Link to ="/school"> Boot Camps </Link> | {""}
+              <Link to="/school"> Boot Camps </Link> | {""}
+              <Link to="/trending"> Trending </Link>
             </nav>
           </div>
               {/* <UserProfile user={user} logout={this.logout} /> */}
               <p>{this.state.lockedResult}</p>
             <Route path ="/" exact render={() => <Home Home={Home} user={this.state.user} /> }/> 
-            {/* <Route path={`/profile/${this.state.user._id}`} render={() => ( <UserProfile user={this.state.user} logout={this.logout} /> )} /> */}
-            <Route path ="/school" exact render={() => <School School={School} /> } /> 
+            <Route path={`/profile/${this.state.user._id}`} render={() => ( <UserProfile user={this.state.user} logout={this.logout} /> )} />
+            <Route path="/trending" exact render={() => <Trending Trending={Trending} /> }/>  
+            <Route path="/school" exact render={() => <School School={School} /> } /> 
         </BrowserRouter> 
       </div>
       )
