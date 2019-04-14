@@ -3,6 +3,7 @@ import './App.css';
 import Signup from './Signup';
 import Home from "./Home"; 
 import School from "./School"
+import Trending from "./Trending"
 import Login from './Login';
 import UserProfile from './UserProfile';
 import {BrowserRouter, Route, Link} from "react-router-dom"
@@ -18,7 +19,6 @@ class App extends Component {
       user: null,
       errorMessage: '',
       lockedResult: '',
-      newsApi: [],
     }
     this.liftTokenToState = this.liftTokenToState.bind(this)
     this.checkForLocalToken = this.checkForLocalToken.bind(this)
@@ -60,13 +60,6 @@ class App extends Component {
 
   componentDidMount() {
     this.checkForLocalToken()
-    let newsApi = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=47b1d9f9ee354c3992a16d4f94dddc69"
-    axios.get(newsApi).then(response => {
-      console.log(response.data.articles)
-      this.setState({
-        news:response.data.articles
-      })
-    }).catch( err => console.log(err))
   }
 
   // data contains user and token
@@ -111,14 +104,19 @@ class App extends Component {
       contents = (
       <div className="homeBox">
         <BrowserRouter>
-          <nav>
-            <Link to="/"> Home </Link> | {""}
-            <Link to ="/school"> Boot Camps </Link> | {""}
-          </nav>
-              <UserProfile user={user} logout={this.logout} />
+          <div className="navBarBox">
+            <nav>
+              <Link to="/"> Home </Link> | {""}
+              <Link to="/school"> Boot Camps </Link> | {""}
+              <Link to="/trending"> Trending </Link>
+            </nav>
+          </div>
+              {/* <UserProfile user={user} logout={this.logout} /> */}
               <p>{this.state.lockedResult}</p>
-            <Route path ="/" exact render={() => <Home Home={Home} /> }/> 
-            <Route path ="/school" exact render={() => <School School={School} /> } /> 
+            <Route path ="/" exact render={() => <Home Home={Home} user={this.state.user} /> }/> 
+            <Route path={`/profile/${this.state.user._id}`} render={() => ( <UserProfile user={this.state.user} logout={this.logout} /> )} />
+            <Route path="/trending" exact render={() => <Trending Trending={Trending} /> }/>  
+            <Route path="/school" exact render={() => <School School={School} /> } /> 
         </BrowserRouter> 
       </div>
       )
