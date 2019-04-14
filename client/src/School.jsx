@@ -4,6 +4,7 @@ const School = (props) => {
    let devSchool = props.bootcamp.schools.map((devs, index) => (
       <div className="schoolCard" key={index}>
          <p>{devs.campus}</p>
+         <p>{devs.img}</p>
          <p>{devs.cost}</p>
          <p>{devs.len}</p>
          <p>{devs.loc}</p>
