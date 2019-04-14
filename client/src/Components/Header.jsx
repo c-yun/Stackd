@@ -5,7 +5,7 @@ const Header = (props) => {
     return (
         <div className='Header'>
             <Link to='/'>
-                <h1>Stackd</h1>
+                <h1 className='brand'>Stackd</h1>
             </Link>
         </div>
     )
