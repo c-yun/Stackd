@@ -118,7 +118,7 @@ class App extends Component {
             <Route path ="/" exact render={() => <Home Home={Home} user={this.state.user} /> }/> 
             <Route path={`/profile/${this.state.user._id}`} render={() => ( <UserProfile user={this.state.user} logout={this.logout} /> )} />
             <Route path="/trending" exact render={() => <Trending Trending={Trending} /> }/>  
-            <Route path="/school" exact render={() => <School School={School} /> } /> 
+            <Route path="/school" exact render={() => <School bootcamp={this.state.bootcamp} /> } /> 
         </BrowserRouter> 
       </div>
       )

@@ -1,7 +1,7 @@
 import React from "react";
 
 const School = (props) => {
-   let devSchool = props.bootcamp.school.map((devs, index) => (
+   let devSchool = props.bootcamp.schools.map((devs, index) => (
       <div key={index}>
          {devs.campus}
       </div>
