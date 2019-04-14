@@ -1,5 +1,5 @@
 
-const schools = [
+export const schools = [
 {
     campus: 'GA',
     cost: '$13,950 - $14,950',
@@ -63,5 +63,22 @@ const schools = [
     loc: 'San Francisco, Oakland, San Jose',
     img: '',
     url: 'https://hackbrightacademy.com/'
+},
+{
+    campus: 'Coding Temple',
+    cost: '$11,000 - $12,495',
+    len: '10 weeks',
+    loc: 'Boston, Chicago, Dallas, Washington DC',
+    img: '',
+    url: 'https://codingtemple.com/'
+},
+{
+    campus: 'The Software Guild',
+    cost: '$10,000 - $13,750',
+    len: '10 weeks',
+    loc: 'Boston, Chicago, Dallas, Washington DC',
+    img: '',
+    url: 'https://codingtemple.com/'
 }
+
 ]
