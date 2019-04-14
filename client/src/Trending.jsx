@@ -1,7 +1,7 @@
-   import React from "react";
+   import {React} from "react";
    // import { PieChart, Pie, Sector, Cell,} from 'recharts';
 
-   // const Trending = () => {
+   const Trending = () => {
    //    const data = [
    //       { name: 'Group A', value: 400 },
    //       { name: 'Group B', value: 300 },
@@ -27,6 +27,6 @@
       {/* </text> */}
       </div>
    )
-
+}
 
 export default Trending; 

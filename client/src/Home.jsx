@@ -29,7 +29,7 @@ componentDidMount(){
 
 render(){
    const news = this.state.news ?
-   this.state.news.map((article, index) =>(
+   this.state.news.map((article, index) => (
       <div key={index}>
             <Card style={{ width: '18rem' }}>
                <Card.Img variant="top" src={article.urlToImage} />
