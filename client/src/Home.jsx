@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import {Card, Button, Row, Col} from "react-bootstrap"
 import axios from 'axios';
+import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
-
-library.add(faStroopwafel)
+library.add(faBookmark)
 
 class Home extends Component {
 constructor(props){
@@ -34,7 +36,10 @@ render(){
                   <Card.Body>
                      <Card.Title>{article.title}</Card.Title>
                      <Card.Text> {article.description} by {article.author}</Card.Text>
-                     <Button variant="primary">Go somewhere</Button>
+                     {/* <Button variant="primary">Go somewhere</Button> */}
+                        <Card.Link href={article.url}>Article Link</Card.Link>
+                        <Card.Link href=""> Bookmark This </Card.Link>
+                        
                   </Card.Body>
             </Card>
       </div>
