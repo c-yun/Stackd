@@ -2,8 +2,8 @@ import React from "react";
 
 const School = (props) => {
    let devSchool = props.bootcamp.schools.map((devs, index) => (
-      <div key={index}>
-         {devs.campus}
+      <div className="schoolCard" key={index}>
+         <p>{devs.campus}</p>
          {devs.cost}
       </div>
    ))
