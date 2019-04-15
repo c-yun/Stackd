@@ -392,7 +392,8 @@ Java = [
    render() {
       return (
       <div>
-      <h1> React </h1>
+         <h1>Hiring Trends</h1>
+      <h2> React </h2>
       <AreaChart width={500} height={200} data={this.React} margin={{ top: 10, right: 30, left: 0, bottom: 0,}}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
@@ -400,7 +401,7 @@ Java = [
             <Tooltip />
             <Area type="monotone" dataKey="uv" stroke="#000" fill="#4F86F7" />
       </AreaChart>
-      <h1> Python </h1>
+      <h2> Python </h2>
       <AreaChart width={500} height={200} data={this.Python} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
@@ -408,7 +409,7 @@ Java = [
             <Tooltip />
             <Area connectNulls type="monotone" dataKey="uv" stroke="#000" fill="#4F86F7" />
       </AreaChart>
-      <h1> Javascript </h1>
+      <h2> Javascript </h2>
       <AreaChart width={500} height={200} data={this.Javascript} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
@@ -416,7 +417,7 @@ Java = [
             <Tooltip />
             <Area connectNulls type="monotone" dataKey="uv" stroke="#000" fill="#4F86F7" />
       </AreaChart>
-      <h1> Java </h1>
+      <h2> Java </h2>
       <AreaChart width={500} height={200} data={this.Java} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
