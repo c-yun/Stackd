@@ -292,7 +292,101 @@ Javascript = [
       },
 ]
 
-
+Java = [
+   {
+      name: 'Apr 11', uv: 9.13, pv: 4300, amt: 2100,
+      },
+      {
+      name: 'Aug 11', uv: 11.67, pv: 4300, amt: 2100,
+      },
+      {
+      name: 'Nov 11', uv: 12.92, pv: 4300, amt: 2100,
+      },
+      {
+      name: 'Mar 12', uv: 10.04, pv: 4300, amt: 2100,
+      },
+      {
+      name: 'Jun 12', uv: 10.17, pv: 4300, amt: 2100,
+      },
+      {
+      name: 'Sep 12', uv: 12.61, pv: 4300, amt: 2100,
+      },
+      {
+      name: 'Dec 12', uv: 9.96, pv: 4300, amt: 2100,
+      },
+      {
+      name: 'Mar 13', uv: 11.90, pv: 4300, amt: 2100,
+      }, 
+      {
+      name: 'Jun 13', uv: 16.30, pv: 4300, amt: 2100,
+      }, 
+      {
+      name: 'Sep 13', uv: 11.11, pv: 4300, amt: 2100,
+      }, 
+      {
+      name: 'Dec 13', uv: 10.65, pv: 4300, amt: 2100,
+      }, 
+      {
+      name: 'Mar 14', uv: 9.83, pv: 4300, amt: 2100,
+      }, 
+      {
+      name: 'Jun 14', uv: 10.11, pv: 4300, amt: 2100,
+      }, 
+      {
+      name: 'Sep 14', uv: 12.50, pv: 4300, amt: 2100,
+      }, 
+      {
+      name: 'Dec 14', uv: 11.76, pv: 4300, amt: 2100,
+      }, 
+      {
+      name: 'Mar 15', uv: 10.02, pv: 4300, amt: 2100,
+      }, 
+      {
+      name: 'Jun 15', uv: 11.18, pv: 4300, amt: 2100,
+      }, 
+      {
+      name: 'Dec 15', uv: 10, pv: 4300, amt: 2100,
+      }, 
+      {
+      name: 'Mar 16', uv: 10.25, pv: 4300, amt: 2100,
+      }, 
+      {
+      name: 'Jun 16', uv: 10, pv: 4300, amt: 2100,
+      }, 
+      {
+      name: 'Sep 16', uv: 10.54, pv: 4300, amt: 2100,
+      }, 
+      {
+      name: 'Dec 16', uv: 11.13, pv: 4300, amt: 2100,
+      }, 
+      {
+      name: 'Mar 17', uv: 10.13, pv: 4300, amt: 2100,
+      }, 
+      {
+      name: 'Jun 17', uv: 10.03, pv: 4300, amt: 2100,
+      },
+      {
+      name: 'Sep 17', uv: 10.74, pv: 4300, amt: 2100,
+      },
+      {
+      name: 'Dec 17', uv: 9.90, pv: 4300, amt: 2100,
+      },
+      {
+      name: 'Mar 18', uv: 9.57, pv: 4300, amt: 2100,
+      },
+      {
+      name: 'Jun 18', uv: 9.92, pv: 4300, amt: 2100,
+      },
+      {
+      name: 'Sep 18', uv: 9.54, pv: 4300, amt: 2100,
+      },
+      {
+      name: 'Dec 18', uv: 10.74, pv: 4300, amt: 2100,
+      },
+      {
+      name: 'Mar 19', uv: 9.74, pv: 4300, amt: 2100,
+      },
+]
 
 
    render() {
@@ -304,7 +398,7 @@ Javascript = [
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
-            <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+            <Area type="monotone" dataKey="uv" stroke="#000" fill="#4F86F7" />
       </AreaChart>
       <h1> Python </h1>
       <AreaChart width={500} height={200} data={this.Python} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
@@ -312,7 +406,7 @@ Javascript = [
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
-            <Area connectNulls type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+            <Area connectNulls type="monotone" dataKey="uv" stroke="#000" fill="#4F86F7" />
       </AreaChart>
       <h1> Javascript </h1>
       <AreaChart width={500} height={200} data={this.Javascript} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
@@ -320,7 +414,7 @@ Javascript = [
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
-            <Area connectNulls type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+            <Area connectNulls type="monotone" dataKey="uv" stroke="#000" fill="#4F86F7" />
       </AreaChart>
       <h1> Java </h1>
       <AreaChart width={500} height={200} data={this.Java} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
@@ -328,7 +422,7 @@ Javascript = [
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
-            <Area connectNulls type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+            <Area connectNulls type="monotone" dataKey="uv" stroke="#000" fill="#4F86F7" />
       </AreaChart>
       </div>
       );
