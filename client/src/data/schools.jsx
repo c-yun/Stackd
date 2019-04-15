@@ -78,7 +78,7 @@ export const schools = [
     len: 'Length: 10 weeks',
     loc: 'Locations: Boston, Chicago, Dallas, Washington DC',
     img: '',
-    url: 'https://codingtemple.com/'
+    url: 'https://www.thesoftwareguild.com/'
 }
 
 ]
