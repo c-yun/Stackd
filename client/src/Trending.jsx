@@ -210,7 +210,7 @@ Python = [
             <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
       </AreaChart>
       <h1> Python </h1>
-      <AreaChart width={500} height={200} data={this.data} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
+      <AreaChart width={500} height={200} data={this.Python} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />
