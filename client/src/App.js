@@ -11,6 +11,7 @@ import axios from 'axios';
 import {schools} from './data/schools';
 
 import Header from './Components/Header';
+import Footer from "./Components/Footer"
 
 
 
@@ -139,6 +140,7 @@ class App extends Component {
         <div className='content-box'>
           {contents}
         </div>  
+        <Footer /> 
       </div>
     );
   }

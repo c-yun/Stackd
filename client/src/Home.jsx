@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Card, Button, Row, Col, Jumbotron, Container} from "react-bootstrap"
 import axios from 'axios';
+import Vid from "./Images&Video/Vid.mp4"
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -80,12 +81,9 @@ render(){
    return(
       <div className="homeBox">
          <Jumbotron fluid>
-            <Container>
-            <h1>For All Your Tech Needs </h1>
-            <p>
-               some text goes here balblalblablalba 
-            </p>
-            </Container>
+            <video className="video-background" preload="true" muted="true" autoplay="true" loop="true">
+               <source src={Vid} type="video/mp4" />
+            </video>
       </Jumbotron>
          <br /> 
          <Row>
