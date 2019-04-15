@@ -4,6 +4,7 @@ const User = require('../models/user');
 require('dotenv').config();
 
 
+
 // POST an article that the user bookmarked 
 
 
@@ -13,11 +14,14 @@ require('dotenv').config();
 
 
 
+
 // GET ONE of the articles that the user bookmarked 
 
 
 
+
 // Delete an article that the user bookmarked 
+
 
 
 
