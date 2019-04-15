@@ -2,13 +2,17 @@ import React from "react";
 
 const School = (props) => {
    let devSchool = props.bootcamp.schools.map((devs, index) => (
-      <div key={index}>
-         {devs.campus}
+      <div className="schoolCard" key={index}>
+         <p>{devs.campus}</p>
+         <p>{devs.img}</p>
+         <p>{devs.cost}</p>
+         <p>{devs.len}</p>
+         <p>{devs.loc}</p>
       </div>
    ))
    return(
       <div className="schoolBox">
-         <h1> Welcome to the schools page </h1>
+         <h1> Coding Bootcamp Comparison </h1>
          {devSchool}
       </div>
    )
