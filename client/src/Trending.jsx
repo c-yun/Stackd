@@ -60,7 +60,7 @@ React = [
       name: 'Dec 15', uv: 2.78, pv: 4300, amt: 2100,
    }, 
    {
-      name: 'Mar 16', uv: 3490, pv: 4300, amt: 2100,
+      name: 'Mar 16', uv: 0, pv: 4300, amt: 2100,
    }, 
    {
       name: 'Jun 16', uv: 1.29, pv: 4300, amt: 2100,
@@ -210,7 +210,7 @@ Python = [
             <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
       </AreaChart>
       <h1> Python </h1>
-      <AreaChart width={500} height={200} data={this.data} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
+      <AreaChart width={500} height={200} data={this.Python} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />
