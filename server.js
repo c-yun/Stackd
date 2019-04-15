@@ -1,4 +1,6 @@
 require('dotenv').config();
+// const User = require("../models/user")
+// const Article = require("../models/article")
 const express = require('express');
 const mongoose = require('mongoose');
 const expressJWT = require('express-jwt');
@@ -24,8 +26,8 @@ const signupLimiter = new RateLimit({
     delayMs: 0, // disabled
     message: 'Maximum accounts created. Please try again later.'
 })
-
-mongoose.connect('mongodb://localhost/jwtAuth', {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
+// mongoose.connect('mongodb://localhost/jwtAuth', {useNewUrlParser: true});
 const db = mongoose.connection;
 db.once('open', () => {
     console.log(`Connected to Mongo on ${db.host}:${db.port}`);
@@ -33,6 +35,8 @@ db.once('open', () => {
 db.on('error', (err) => {
     console.log(`Database error:\n${err}`);
 });
+
+app.use("/article", require("./routes/article"));
 
 app.use('/auth/login', loginLimiter);
 
