@@ -60,7 +60,7 @@ React = [
       name: 'Dec 15', uv: 2.78, pv: 4300, amt: 2100,
    }, 
    {
-      name: 'Mar 16', uv: 3490, pv: 4300, amt: 2100,
+      name: 'Mar 16', uv: 0, pv: 4300, amt: 2100,
    }, 
    {
       name: 'Jun 16', uv: 1.29, pv: 4300, amt: 2100,
