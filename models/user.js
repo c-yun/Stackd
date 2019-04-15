@@ -22,7 +22,7 @@ const userSchema = new Schema({
         minlength: [5, 'Email must be between 5 and 99 characters'],
         maxlength: [99, 'Email must be between 5 and 99 characters']
     },
-    profile: [{ type: Schema.Types.ObjectId, ref: "Profile" }],
+    // articles: [{ type: Schema.Types.ObjectId, ref: 'Article' }],
 });
 
 // This returns an object without a password
@@ -32,7 +32,6 @@ userSchema.set('toObject', {
             _id: ret._id,
             email: ret.email,
             name: ret.name,
-            profile: ret.articles
         }
         return returnJson;
     }
