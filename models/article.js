@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const articleSchema = new Schema({
-   Title: String, 
-   Author: String, 
+   title: String, 
+   author: String, 
    url: String, 
    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
 });
