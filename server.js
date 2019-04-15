@@ -36,7 +36,7 @@ db.on('error', (err) => {
     console.log(`Database error:\n${err}`);
 });
 
-app.use("/article", require("./routes/article"));
+app.use("/profile", require("./routes/profile"));
 
 app.use('/auth/login', loginLimiter);
 
