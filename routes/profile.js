@@ -41,22 +41,8 @@ router.post("/:userId/articles", (req, res) => {
             })
          })
       });
-      // newArticle.save((err, article) =>{
-      //    user.articles.push(article);
-      //    user.save((err, user) => {
-      //       res.status(201).json(user);
-      //    })
-      // })
    })
 })
-
-
-// GET all the articles that the user bookmarked 
-// router.get('/:userId/articles', (req, res) => {
-// 	Article.find({}, (err, article) => {
-// 		err? res.send(err) : res.json(article);
-// 	})
-// })
 
 router.get("/:userId/articles", (req, res) => {
    console.log("hiting the route for the profile bookmarks")
@@ -86,12 +72,27 @@ router.get("/:userId/articles", (req, res) => {
 
 
 // Delete an article that the user bookmarked 
-router.delete('profile/:userId/article/:id', (req, res) => {
-	Article.remove({_id: req.params.id}, (err) => {
-		err ? res.send(err) : res.sendStatus(200);
-	})
-})
+// router.delete('profile/:userId/article/:id', (req, res) => {
+// 	Article.remove({_id: req.params.id}, (err) => {
+// 		err ? res.send(err) : res.sendStatus(200);
+// 	})
+// })
 
+
+router.delete("/:userId/articles/:id", (req, res) => {
+   console.log("start of delete rout");
+   Article.findOneAndDelete({_id: req.params.id}, (err, article) =>{
+      User.findById(req.params.userId, (err, user) => {
+         if(err){
+            throw err;
+         } else {
+            console.log("working")
+            user.update({ $pull: {articles: {_id: req.params.id} } })
+            res.status(200).json({ message: "delete complete. article was deleted" })
+         };
+      });
+   });
+});
 
 
 module.exports = router; 
