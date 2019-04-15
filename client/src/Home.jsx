@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Card, Button, Row, Col, Jumbotron, Container} from "react-bootstrap"
 import axios from 'axios';
-import Vid from "./Images&Video/Vid.mp4"
+import Vid from "./Images&Video/stacdVideo.mp4"
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -86,6 +86,7 @@ render(){
             </video>
       </Jumbotron>
          <br /> 
+         <h3> Top Stories </h3>
          <Row>
             {news}
          </Row>
