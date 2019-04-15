@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+// require('dotenv').config();
 import {Card, Button, Row, Col, Jumbotron, Container} from "react-bootstrap"
 import axios from 'axios';
+import Vid from "./Images&Video/stacdVideo.mp4"
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -21,7 +23,7 @@ constructor(props){
 
 
 componentDidMount(){
-   let newsApi = "https://newsapi.org/v2/everything?domains=techcrunch.com,wired.com,&language=en&pageSize=40&apiKey=47b1d9f9ee354c3992a16d4f94dddc69"
+   let newsApi = `https://newsapi.org/v2/everything?domains=techcrunch.com,wired.com,&language=en&pageSize=40&apiKey=47b1d9f9ee354c3992a16d4f94dddc69`
    axios.get(newsApi).then(response => {
       console.log(response.data.articles)
       this.setState({
@@ -64,7 +66,7 @@ render(){
          <Row>
          <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={article.urlToImage} />
-               <Card.Body>
+               <Card.Body className="cardBody">
                   <Card.Title>{article.title}</Card.Title>
                   <Card.Text> {article.description} by {article.author}</Card.Text>
                   {/* <Button variant="primary">Go somewhere</Button> */}
@@ -80,14 +82,12 @@ render(){
    return(
       <div className="homeBox">
          <Jumbotron fluid>
-            <Container>
-            <h1>For All Your Tech Needs </h1>
-            <p>
-               some text goes here balblalblablalba 
-            </p>
-            </Container>
+            <video className="video-background" preload="true" muted="true" autoplay="true" loop="true">
+               <source src={Vid} type="video/mp4" />
+            </video>
       </Jumbotron>
          <br /> 
+         <h3> Top Stories </h3>
          <Row>
             {news}
          </Row>

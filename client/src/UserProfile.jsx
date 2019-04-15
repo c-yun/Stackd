@@ -4,8 +4,7 @@ class UserProfile extends Component {
 constructor(props){
     super(props)
 }
-
-    render(){
+render(){
         return (
             <div className='UserProfile'>
                 <p>Hello, {this.props.user.name}</p>

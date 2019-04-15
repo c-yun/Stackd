@@ -9,8 +9,10 @@ import UserProfile from './UserProfile';
 import {BrowserRouter, Route, Link} from "react-router-dom"
 import axios from 'axios';
 import {schools} from './data/schools';
+import {Card, Button, Row, Col, Jumbotron, Container, Nav, Navbar} from "react-bootstrap"
 
 import Header from './Components/Header';
+import Footer from "./Components/Footer"
 
 
 
@@ -110,10 +112,15 @@ class App extends Component {
         <BrowserRouter>
           <div className="navBarBox">
             <nav>
-              <Link to="/"> Home </Link> | {""}
-              <Link to="/school"> Boot Camps </Link> | {""}
-              <Link to="/trending"> Trending </Link> | {""}
-              <Link to={`/profile/${this.state.user._id}`}> Profile </Link>
+              <Navbar bg="dark" variant="dark">
+                <Navbar.Brand className='brand' href="#home">Stackd</Navbar.Brand>
+                  <Nav className="mr-auto">
+                    <Nav.Link href="/">Home</Nav.Link>
+                    <Nav.Link href="/school">Dev Camps</Nav.Link>
+                    <Nav.Link href="/trending">Trending</Nav.Link>
+                    <Nav.Link href={`/profile/${this.state.user._id}`}>Profile</Nav.Link>
+                  </Nav>
+                </Navbar>
             </nav>
           </div>
               {/* <UserProfile user={user} logout={this.logout} /> */}
@@ -135,10 +142,10 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <Header />
         <div className='content-box'>
           {contents}
         </div>  
+        {/* <Footer />  */}
       </div>
     );
   }
