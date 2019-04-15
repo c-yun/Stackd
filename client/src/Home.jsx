@@ -15,10 +15,10 @@ class Home extends Component {
 constructor(props){
    super(props)
    this.state = {
-      newsApi: [],
-      comments: [],
+      newsApi: []
    }
    this.addToProfile = this.addToProfile.bind(this)
+   // this.postAdd = this.postAdd.bind(this);
 }
 
 
@@ -33,11 +33,12 @@ componentDidMount(){
 }
 
 postAdd = (object) => {
-   axios.post(`/profile/${object.userId}/uploads`, {
-      articleId: object.articleId,
-      comments: object.comments,
-      profilePic: object.profilePic,
-      date: object.date, 
+   console.log("hiting axios post route FRONTEND")
+   axios.post(`/profile/${object.userId}/articles`, {
+      title: object.title,
+      author: object.author,
+      url: object.url,
+      userId: object.userId, 
    })
    .then((res) => {
       console.log(res)
@@ -47,13 +48,12 @@ postAdd = (object) => {
       console.log(error);
    });
 }
-addToProfile = () => {
-let date = new Date();
+addToProfile = (article) => {
 let postObject ={
+   title: article.title,
+   author: article.author,
+   url: article.url,
    userId: this.props.user._id,
-   articleId: this.props.articleId,
-   comments: this.props.comments,
-   date: date,
 }
 this.postAdd(postObject);
 }
@@ -71,7 +71,7 @@ render(){
                   <Card.Text> {article.description} by {article.author}</Card.Text>
                   {/* <Button variant="primary">Go somewhere</Button> */}
                      <Card.Link href={article.url}> Link </Card.Link> <br /> 
-                     <Button onClick={this.addToProfile}> Add To Profile </Button>
+                     <Button onClick={() => this.addToProfile(article)}> Add To Profile </Button>
             </Card.Body>
          </Card>
          </Row>
