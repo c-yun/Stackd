@@ -6,31 +6,6 @@ require('dotenv').config();
 
 // POST an article that the user bookmarked 
 
-router.post()
-
-
-
-
-
-// router.post('/:userId/uploads', (req, res) => {
-//    User.findById(req.params.userId).then((user, err) => {
-//      let newUpload = new Upload({
-//        publicId: req.body.publicId,
-//        cloudColors: req.body.cloudColors,
-//        colorRec: req.body.colorRec,
-//        date: req.body.date,
-//      });
-//      newUpload.save((err, upload) => {
-//        user.uploads.push(upload);
-//        user.save((err, user) => {
-//          res.status(201).json(user);
-//        });
-//      });
-//    });
-//  });
-
-
-
 
 
 
@@ -43,7 +18,6 @@ router.post()
 
 
 // Delete an article that the user bookmarked 
-
 
 
 

@@ -110,11 +110,12 @@ class App extends Component {
             <nav>
               <Link to="/"> Home </Link> | {""}
               <Link to="/school"> Boot Camps </Link> | {""}
-              <Link to="/trending"> Trending </Link>
+              <Link to="/trending"> Trending </Link> | {""}
+              <Link to={`/profile/${this.state.user._id}`}> Profile </Link>
             </nav>
           </div>
               {/* <UserProfile user={user} logout={this.logout} /> */}
-              <p>{this.state.lockedResult}</p>
+              {/* <p>{this.state.lockedResult}</p> */}
             <Route path ="/" exact render={() => <Home Home={Home} user={this.state.user} /> }/> 
             <Route path={`/profile/${this.state.user._id}`} render={() => ( <UserProfile user={this.state.user} logout={this.logout} /> )} />
             <Route path="/trending" exact render={() => <Trending Trending={Trending} /> }/>  
