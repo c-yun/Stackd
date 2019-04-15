@@ -100,29 +100,101 @@ React = [
    },
 ]
 
-   data = [
-      {
-      name: 'Page A', uv: 4000, pv: 2400, amt: 2400,
+Python = [
+   {
+      name: 'Apr 11', uv: 16.89, pv: 4300, amt: 2100,
       },
       {
-      name: 'Page B', uv: 3000, pv: 1398, amt: 2210,
+      name: 'Aug 11', uv: 15, pv: 4300, amt: 2100,
       },
       {
-      name: 'Page C', uv: 2000, pv: 9800, amt: 2290,
+      name: 'Nov 11', uv: 11.67, pv: 4300, amt: 2100,
       },
       {
-      name: 'Page D', uv: 2780, pv: 3908, amt: 2000,
+      name: 'Mar 12', uv: 20.46, pv: 4300, amt: 2100,
       },
       {
-      name: 'Page E', uv: 1890, pv: 4800, amt: 2181,
+      name: 'Jun 12', uv: 23.31, pv: 4300, amt: 2100,
       },
       {
-      name: 'Page F', uv: 2390, pv: 3800, amt: 2500,
+      name: 'Sep 12', uv: 20.27, pv: 4300, amt: 2100,
       },
       {
-      name: 'Page G', uv: 1.29, pv: 4300, amt: 2100,
+      name: 'Dec 12', uv: 20.75, pv: 4300, amt: 2100,
       },
-   ];
+      {
+         name: 'Mar 13', uv: 14.97, pv: 4300, amt: 2100,
+      }, 
+      {
+         name: 'Jun 13', uv: 20.65, pv: 4300, amt: 2100,
+      }, 
+      {
+         name: 'Sep 13', uv: 15.23, pv: 4300, amt: 2100,
+      }, 
+      {
+         name: 'Dec 13', uv: 21.29, pv: 4300, amt: 2100,
+      }, 
+      {
+         name: 'Mar 14', uv: 21.68, pv: 4300, amt: 2100,
+      }, 
+      {
+         name: 'Jun 14', uv: 19.10, pv: 4300, amt: 2100,
+      }, 
+      {
+         name: 'Sep 14', uv: 27.43, pv: 4300, amt: 2100,
+      }, 
+      {
+         name: 'Dec 14', uv: 24.14, pv: 4300, amt: 2100,
+      }, 
+      {
+         name: 'Mar 15', uv: 18.34, pv: 4300, amt: 2100,
+      }, 
+      {
+         name: 'Jun 15', uv: 19.69, pv: 4300, amt: 2100,
+      }, 
+      {
+         name: 'Dec 15', uv: 18.38, pv: 4300, amt: 2100,
+      }, 
+      {
+         name: 'Mar 16', uv: 16.85, pv: 4300, amt: 2100,
+      }, 
+      {
+         name: 'Jun 16', uv: 17.32, pv: 4300, amt: 2100,
+      }, 
+      {
+         name: 'Sep 16', uv: 21.08, pv: 4300, amt: 2100,
+      }, 
+      {
+         name: 'Dec 16', uv: 19.36, pv: 4300, amt: 2100,
+      }, 
+      {
+         name: 'Mar 17', uv: 20.87, pv: 4300, amt: 2100,
+      }, 
+      {
+         name: 'Jun 17', uv: 18.89, pv: 4300, amt: 2100,
+      },
+      {
+         name: 'Sep 17', uv: 21.25, pv: 4300, amt: 2100,
+      },
+      {
+         name: 'Dec 17', uv: 20.05, pv: 4300, amt: 2100,
+      },
+      {
+         name: 'Mar 18', uv: 20.02, pv: 4300, amt: 2100,
+      },
+      {
+         name: 'Jun 18', uv: 23.62, pv: 4300, amt: 2100,
+      },
+      {
+         name: 'Sep 18', uv: 23.57, pv: 4300, amt: 2100,
+      },
+      {
+         name: 'Dec 18', uv: 22.22, pv: 4300, amt: 2100,
+      },
+      {
+         name: 'Mar 19', uv: 24.62, pv: 4300, amt: 2100,
+      },
+]
 
   
 
