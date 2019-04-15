@@ -10,6 +10,8 @@ import {BrowserRouter, Route, Link} from "react-router-dom"
 import axios from 'axios';
 import {schools} from './data/schools';
 
+import Header from './Components/Header';
+
 
 
 class App extends Component {
@@ -133,7 +135,7 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <header><h1>Stackd</h1></header>
+        <Header />
         <div className='content-box'>
           {contents}
         </div>  
