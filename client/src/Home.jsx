@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// require('dotenv').config();
 import {Card, Button, Row, Col, Jumbotron, Container} from "react-bootstrap"
 import axios from 'axios';
 import Vid from "./Images&Video/stacdVideo.mp4"
@@ -22,7 +23,7 @@ constructor(props){
 
 
 componentDidMount(){
-   let newsApi = "https://newsapi.org/v2/everything?domains=techcrunch.com,wired.com,&language=en&pageSize=40&apiKey=47b1d9f9ee354c3992a16d4f94dddc69"
+   let newsApi = `https://newsapi.org/v2/everything?domains=techcrunch.com,wired.com,&language=en&pageSize=40&apiKey=47b1d9f9ee354c3992a16d4f94dddc69`
    axios.get(newsApi).then(response => {
       console.log(response.data.articles)
       this.setState({
@@ -65,7 +66,7 @@ render(){
          <Row>
          <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={article.urlToImage} />
-               <Card.Body>
+               <Card.Body className="cardBody">
                   <Card.Title>{article.title}</Card.Title>
                   <Card.Text> {article.description} by {article.author}</Card.Text>
                   {/* <Button variant="primary">Go somewhere</Button> */}

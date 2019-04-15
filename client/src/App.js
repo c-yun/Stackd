@@ -145,7 +145,7 @@ class App extends Component {
         <div className='content-box'>
           {contents}
         </div>  
-        <Footer /> 
+        {/* <Footer />  */}
       </div>
     );
   }
