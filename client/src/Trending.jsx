@@ -1,5 +1,12 @@
 import React, { PureComponent } from 'react';
 import {AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,} from 'recharts';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faReact} from "@fortawesome/free-brands-svg-icons"
+
+
+library.add(faReact)
+
 
 export default class Example extends PureComponent {
 static jsfiddleUrl = 'https://jsfiddle.net/alidingling/w9fyL4uh/';
@@ -394,10 +401,10 @@ Java = [
 
    render() {
       return (
-      <div>
+      <div className="trendingBox">
          <h1>Hiring Trends</h1>
-      <h2> React </h2>
-      <AreaChart width={500} height={200} data={this.React} margin={{ top: 10, right: 30, left: 0, bottom: 0,}}>
+      <h2> React </h2> <FontAwesomeIcon className="fontAwe" size="4x" icon={['fab', 'react']} />
+      <AreaChart className="trendingBox" width={500} height={200} data={this.React} margin={{ top: 10, right: 30, left: 0, bottom: 0,}}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />
@@ -405,7 +412,7 @@ Java = [
             <Area type="monotone" dataKey="uv" stroke="#000" fill="#4F86F7" />
       </AreaChart>
       <h2> Python </h2>
-      <AreaChart width={500} height={200} data={this.Python} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
+      <AreaChart  className="trendingBox" width={500} height={200} data={this.Python} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />
@@ -413,7 +420,7 @@ Java = [
             <Area connectNulls type="monotone" dataKey="uv" stroke="#000" fill="#4F86F7" />
       </AreaChart>
       <h2> Javascript </h2>
-      <AreaChart width={500} height={200} data={this.Javascript} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
+      <AreaChart className="trendingBox"  width={500} height={200} data={this.Javascript} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />
@@ -421,7 +428,7 @@ Java = [
             <Area connectNulls type="monotone" dataKey="uv" stroke="#000" fill="#4F86F7" />
       </AreaChart>
       <h2> Java </h2>
-      <AreaChart width={500} height={200} data={this.Java} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
+      <AreaChart  className="trendingBox" width={500} height={200} data={this.Java} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />

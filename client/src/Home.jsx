@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // require('dotenv').config();
-import {Card, Button, Row, Col, Jumbotron, Container} from "react-bootstrap"
+import {Card, Button, Row, Col, Jumbotron, Container, CardGroup, CardDeck} from "react-bootstrap"
 import axios from 'axios';
 import Vid from "./Images&Video/stacdVideo.mp4"
 import { faBookmark } from '@fortawesome/free-solid-svg-icons';
@@ -62,18 +62,18 @@ render(){
    const news = this.state.news ?
    this.state.news.map((article, index) => (
       <div key={index}>
-      <Container>
+      <Container className="card">
          <Row>
-         <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={article.urlToImage} />
-               <Card.Body className="cardBody">
-                  <Card.Title>{article.title}</Card.Title>
-                  <Card.Text> {article.description} by {article.author}</Card.Text>
-                  {/* <Button variant="primary">Go somewhere</Button> */}
+            <Card className="" style={{width:"18em"}}>
+               <Card.Img variant="top" src={article.urlToImage} />
+                  <Card.Body className="cardBody">
+                     <Card.Title>{article.title}</Card.Title>
+                     <Card.Text> {article.description} by {article.author}</Card.Text>
+                     {/* <Button variant="primary">Go somewhere</Button> */}
                      <Card.Link href={article.url}> Link </Card.Link> <br /> 
                      <Button onClick={() => this.addToProfile(article)}> Add To Profile </Button>
-            </Card.Body>
-         </Card>
+               </Card.Body>
+            </Card>
          </Row>
       </Container>
       </div>
@@ -86,17 +86,18 @@ render(){
                <source src={Vid} type="video/mp4" />
             </video>
       </Jumbotron>
-         <br /> 
+   <br /> 
+   <div className="newsBox">
          <h3> Top Stories </h3>
-         <Row>
-            {news}
-         </Row>
+      <Row>
+         {news}
+      </Row>
+   </div>
       </div>
    
    
    )  
 }
-
 
 }
 export default Home; 
