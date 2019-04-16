@@ -22,8 +22,10 @@ const School = (props) => {
    ))
    return(
       <div className="schoolBox">
-         <h1> Coding Bootcamp Comparison </h1>
-         {devSchool}
+         <h1 className="schoolHeader"> Coding Bootcamp Comparison </h1>
+            <div className="devSchoolBox">
+               {devSchool}
+            </div>
       </div>
    )
 }

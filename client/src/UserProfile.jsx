@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios"
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, Col } from 'react-bootstrap';
 
 
 class UserProfile extends Component {
@@ -56,18 +56,21 @@ render(){
         <div key={index} className="savedArticles" >
         <Card onClick={() => this.selectArticle(article)}>  
                 <h2>{article.title}</h2>
-                <h4>Published By: {article.author}</h4>
-                <p><a href={article.url}>Source</a></p>
-            <Button  variant="primary" onClick={ () => this.removeArticle(article._id) }> Delete </Button>
+                <footer className="blockquote-footer"> {article.author} </footer>
+                <p><a href={article.url}> Link To Article </a></p>
+            <Button className="removeBtn" variant="secondary" onClick={ () => this.removeArticle(article._id) }> Remove Article </Button>
         </Card>
         </div>
     ))
     return (
         <div className='UserProfile'>
-                {/* {this.state.articles} */}
-                <p>Hello, {this.props.user.name}</p>
-                {articles}
-                <Button><a onClick={this.props.logout}>Log Out!</a></Button>
+            <div className="userProfileInternalBox">
+                <h4>Hello, {this.props.user.name}</h4>
+                    <Col>
+                        {articles}
+                    </Col>
+                <Button variant="info"><a onClick={this.props.logout}>Log Out!</a></Button>
+            </div>
             </div>
         )
     }
