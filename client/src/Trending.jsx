@@ -406,9 +406,9 @@ Java = [
             <div className="graphBox">
                <Row>
                   <Col>
-                     <h2> React </h2> <FontAwesomeIcon className="fontAwe" size="4x" icon={['fab', 'react']} />
                      <Card>
                         <Card.Body>
+                     <h2> React </h2> <FontAwesomeIcon className="fontAwe" size="4x" icon={['fab', 'react']} />
                         <AreaChart className="trendingBox" width={500} height={200} data={this.React} margin={{ top: 10, right: 30, left: 0, bottom: 0,}}>
                            <CartesianGrid strokeDasharray="3 3" />
                            <XAxis dataKey="name" />

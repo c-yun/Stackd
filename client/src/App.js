@@ -26,7 +26,7 @@ class App extends Component {
       errorMessage: '',
       lockedResult: '',
       bootcamp: {schools},
-      loading: true
+      loading: true,
       loginSelected: false,
     }
     this.liftTokenToState = this.liftTokenToState.bind(this)
@@ -128,8 +128,6 @@ signUpClick = (e) =>{
     if (loading) {
       return null;
     }
-    let user = this.state.user
-=======
     // let contents;
     let logbox;
     let logger; 
