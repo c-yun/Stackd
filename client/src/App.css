@@ -15,6 +15,8 @@
   float: none; /* Added */
   margin-bottom: 10px; /* Added */
   padding-left: 10px;
+  border: 4px solid blue;
+  width: 75%;
 }
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -68,7 +70,7 @@ line-height: 2em;
   font-family: 'Cute Font';
 }
 
-/* //////////////////////// VIDEO ////////////////// */
+/* //////////////////////// VIDEO ////////////////////////////// */
 .jumbotron {
   position: relative;
   z-index: -2;
@@ -87,7 +89,7 @@ line-height: 2em;
 }
 
 
-/* //////////////////// Cards //////////////////// */
+/* //////////////////// Cards //////////////////////////////////// */
 
 /* .cardBody{
   max-width: 50%;
@@ -98,14 +100,56 @@ line-height: 2em;
   float: none; /* Added */
 
 
-/* .cardBox{
+.cardBox{
   margin: 0 auto;
   text-align: center;
-} */
+}
 
 .imageBox{
   text-align: center;
+  /* height: 90%; */
   margin: 0 auto;
-  width: auto; 
-  height: 100%;
+}
+
+/* ////////////////////////////// HEADER HOME JSX ////////////////////////////// */
+.headerTopStories{
+  font-family: 'Cute Font';
+  border: 3px solid green;
+  width: 70%;
+  height: 70%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.headerTopStory{
+  font-family: 'Cute Font';
+  font-size: 5em;
+}
+
+/* ////////////////////////////// USERPROFILE /////////////////////////////////  */
+.userProfileInternalBox{
+  border: 4px solid red; 
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  height: 100%
+}
+
+.removeBtn{
+  border: 3px solid purple;
+  margin: 0 auto;
+  width: 20%;
+  height: 50%;
+}
+/* //////////////////////////////// SCHOOL ////////////////////////////////  */
+.devSchoolBox{
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  border: 4px solid green;
+}
+
+.schoolHeader{
+  font-family: 'Cute Font';
+  font-size: 5em;
 }
