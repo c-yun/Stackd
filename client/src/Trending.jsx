@@ -3,11 +3,12 @@ import {AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,} from 'recharts';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faReact, faPython, faJsSquare, faJava } from "@fortawesome/free-brands-svg-icons"
+import { Button, Card, Row, Col } from 'react-bootstrap';
 
 library.add(faReact, faPython, faJsSquare, faJava)
 
 
-export default class Example extends PureComponent {
+export default class Trending extends PureComponent {
 static jsfiddleUrl = 'https://jsfiddle.net/alidingling/w9fyL4uh/';
 
 React = [
@@ -402,6 +403,8 @@ Java = [
       return (
       <div className="trendingBox">
          <h1>Hiring Trends</h1>
+      <Row>
+         <Col>
       <h2> React </h2> <FontAwesomeIcon className="fontAwe" size="4x" icon={['fab', 'react']} />
       <AreaChart className="trendingBox" width={500} height={200} data={this.React} margin={{ top: 10, right: 30, left: 0, bottom: 0,}}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -418,6 +421,8 @@ Java = [
             <Tooltip />
             <Area connectNulls type="monotone" dataKey="uv" stroke="#000" fill="#4F86F7" />
       </AreaChart>
+      </Col>
+      <Col>
       <h2> Javascript </h2> <FontAwesomeIcon className="fontAwe" size="4x" icon={['fab', 'js-square']} /> 
       <AreaChart className="trendingBox"  width={500} height={200} data={this.Javascript} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -434,6 +439,8 @@ Java = [
             <Tooltip />
             <Area connectNulls type="monotone" dataKey="uv" stroke="#000" fill="#4F86F7" />
       </AreaChart>
+      </Col>
+      </Row>
       </div>
       );
    }
