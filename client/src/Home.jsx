@@ -18,6 +18,7 @@ constructor(props){
    this.state = {
       newsApi: [],
       iconSelected: true,
+      otherIcon: false, 
    }
    this.addToProfile = this.addToProfile.bind(this)
    // this.postAdd = this.postAdd.bind(this);
@@ -75,12 +76,12 @@ iconBookmarkResting = (e) => {
 render(){
    let bookmarkIcon;
    if(this.state.iconSelected === true) {
-      console.log("bookmark2")
+      console.log("STAR")
       bookmarkIcon=(
          <FontAwesomeIcon onClick={this.iconBookmarkReady} className="fontAwe" size="4x" icon={["fa", "star"]}/>
       )
       } else {
-         console.log("bookmark1")
+         console.log("BOOKMARK")
          bookmarkIcon=(
             <FontAwesomeIcon onClick={this.iconBookmarkResting} className="fontAwe" size="4x" icon={['fa', 'bookmark']}/>
          )
@@ -98,6 +99,7 @@ render(){
                      <Card.Text> {article.description} by {article.author}</Card.Text>
                      {/* <Button variant="primary">Go somewhere</Button> */}
                      <Card.Link href={article.url}> Link </Card.Link> <br /> 
+
                      <Button onClick={() => this.addToProfile(article)}> {bookmarkIcon} </Button>
                </Card.Body>
             </Card>
