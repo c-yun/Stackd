@@ -5,27 +5,7 @@ const User = require('../models/user');
 // import axios from "axios"
 require('dotenv').config();
 
-
-
-// POST an article that the user bookmarked 
-// router.post("/profile/:userId/", (req, res) => {
-//    console.log("you are hiting this route  BACKEND ")
-//    Article.create({
-//       title: req.body.name,  
-//       author: req.body.author,
-//       url: req.body.url,
-//       userId: req.body.userId
-//    }, (err, article) =>{
-//       User.findById(req.body.userId, function(err, user){
-//          err ? res.send(err) :
-//          user.article.push(article._id)
-//          user.save();
-//          res.sendStatus(200)
-//          console.log("FIND BY ID WORKING ")
-//       })
-//    })
-// })
-
+// POST 
 router.post("/:userId/articles", (req, res) => {
    User.findById(req.params.userId).then((user, err) => {
       Article.create({
@@ -44,6 +24,7 @@ router.post("/:userId/articles", (req, res) => {
    })
 })
 
+// GET ALL 
 router.get("/:userId/articles", (req, res) => {
    console.log("hiting the route for the profile bookmarks")
    User.findById(req.params.userId)
@@ -58,8 +39,14 @@ router.get("/:userId/articles", (req, res) => {
       })
 })
 
-
-
+// GET ONE
+// router.get("/:userId/articles/:id", (req, res) => {
+//    User.findById(req.params.userId)
+//    .populate("articles")
+//    .exec((err, user) => {
+//    err? console.log(err) : res.json(article)
+//    })
+// })
 
 // GET ONE of the articles that the user bookmarked 
 // router.get('profile/:userId/article/:id', (req,res) => {
@@ -70,15 +57,7 @@ router.get("/:userId/articles", (req, res) => {
 // 	})
 // })
 
-
-// Delete an article that the user bookmarked 
-// router.delete('profile/:userId/article/:id', (req, res) => {
-// 	Article.remove({_id: req.params.id}, (err) => {
-// 		err ? res.send(err) : res.sendStatus(200);
-// 	})
-// })
-
-
+// DELETE
 router.delete("/:userId/articles/:id", (req, res) => {
    console.log("start of delete rout");
    Article.findOneAndDelete({_id: req.params.id}, (err, article) =>{

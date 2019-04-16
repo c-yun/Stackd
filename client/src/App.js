@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Signup from './Signup';
 import Home from "./Home"; 
+import Library from "./Library"
 import School from "./School"
 import Trending from "./Trending"
 import Login from './Login';
@@ -118,6 +119,7 @@ class App extends Component {
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/school">Dev Camps</Nav.Link>
                     <Nav.Link href="/trending">Trending</Nav.Link>
+                    <Nav.Link href="/library">Library</Nav.Link>
                     <Nav.Link href={`/profile/${this.state.user._id}`}>Profile</Nav.Link>
                   </Nav>
                 </Navbar>
@@ -125,7 +127,8 @@ class App extends Component {
           </div>
               {/* <UserProfile user={user} logout={this.logout} /> */}
               {/* <p>{this.state.lockedResult}</p> */}
-            <Route path ="/" exact render={() => <Home Home={Home} user={this.state.user} /> }/> 
+            <Route path="/" exact render={() => <Home Home={Home} user={this.state.user} /> }/> 
+            <Route path="/library" exact render={() => <Library Library={Library} />} /> 
             <Route path={`/profile/${this.state.user._id}`} render={() => ( <UserProfile user={this.state.user} logout={this.logout} /> )} />
             <Route path="/trending" exact render={() => <Trending Trending={Trending} /> }/>  
             <Route path="/school" exact render={() => <School bootcamp={this.state.bootcamp} /> } /> 
