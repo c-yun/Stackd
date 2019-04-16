@@ -32,13 +32,14 @@ class Login extends Component {
             email: this.state.email,
             password: this.state.password
         }).then(res => {
+            console.log("we got this from axios:", res.data)
             if (res.data.type === 'error') {
                 this.setState({
                     message: res.data.message
                 })
             } else {
                 localStorage.setItem('mernToken', res.data.token)
-                this.props.liftToken(res.data)
+                this.props.liftTokenToState(res.data)
             }
         }).catch(err => {
             this.setState({

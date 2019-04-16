@@ -65,7 +65,7 @@ render(){
     return (
         <div className='UserProfile'>
             <div className="userProfileInternalBox">
-                <h4>Hello, {this.props.user.name}</h4>
+                <h4 className="userProfileHeader">Hello, {this.props.user.name}</h4>
                     <Col>
                         {articles}
                     </Col>

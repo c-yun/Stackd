@@ -8,11 +8,11 @@ const School = (props) => {
       <Card>
          <Card.Img variant="top" src="" />
          <Card.Body>
-         <Card.Title>{devs.campus}</Card.Title>
+         <h1>{devs.campus}</h1>
             <Card.Text>
-               <p>{devs.cost}</p>
-               <p>{devs.len}</p>
-               <p>{devs.loc}</p>
+               <h6>{devs.cost}</h6>
+               <h6>{devs.len}</h6>
+               <h6>{devs.loc}</h6>
             </Card.Text>
             <a href={devs.url}><Button variant="primary">Website</Button></a>
          </Card.Body>

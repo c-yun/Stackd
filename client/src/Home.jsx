@@ -132,6 +132,7 @@ render(){
    <div className="newsBox">
       <Row>
          {news}
+         <h1> Hello stuf here </h1>
       </Row>
    </div>
 </div>
