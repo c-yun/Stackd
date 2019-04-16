@@ -40,11 +40,12 @@ class Signup extends Component {
             email: this.state.email,
             password: this.state.password
         }).then(res => {
+            console.log("we are getting data SIGNUP", res.data )
             if (res.data.type === 'error') {
                 console.log('ERROR:', res.data.message)
             } else {
                 localStorage.setItem('mernToken', res.data.token)
-                this.props.liftToken(res.data)
+                this.props.liftTokenToState(res.data)
             }
         }).catch(err => {
             // This block catches the rate limiter errors
@@ -59,7 +60,7 @@ class Signup extends Component {
             <div className='Signup'>
                 <h3>Create a new account:</h3>
                 <form onSubmit={this.handleSubmit}>
-                    <input onChange={this.handleNameChange} value={this.state.name} type='text' name='name' placeholder='Your name...' /><br />
+                    <input onChange={this.handleNameChange} value={this.state.name} type='text' name='name' placeholder='First And Last Name..' /><br />
                     <input onChange={this.handleEmailChange} value={this.state.email} type='email' name='email' placeholder='Your email...' /><br />
                     <input onChange={this.handlePasswordChange} value={this.state.password} type='password' name='password' placeholder='Choose a password...' /><br />
                     <input type='submit' value='Sign Up!' />
