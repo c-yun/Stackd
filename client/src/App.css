@@ -4,6 +4,11 @@
   text-align: center;
 }
 
+.media{
+  margin: 0 auto;
+  display: inline;
+}
+
 .homeBox{
   text-align: center;
   margin: 0 auto;
@@ -71,6 +76,7 @@ line-height: 2em;
 /* ======= */
 .brand {
   font-family: 'Cute Font';
+  font-size: 3em;
 }
 
 /* //////////////////////// VIDEO ////////////////////////////// */
