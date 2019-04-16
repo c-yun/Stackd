@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
 // require('dotenv').config();
-import {Card, Button, Row, Col, Jumbotron, Container} from "react-bootstrap"
+import {Card, Button, Row, Col, Jumbotron, Container, CardGroup, CardDeck} from "react-bootstrap"
 import axios from 'axios';
 import Vid from "./Images&Video/stacdVideo.mp4"
-import { faBookmark } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark, faStar} from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faBookmark)
+library.add(faBookmark, faStar)
+
 
 class Home extends Component {
 constructor(props){
    super(props)
    this.state = {
-      newsApi: []
+      newsApi: [],
+      iconSelected: true,
+      otherIcon: false, 
    }
    this.addToProfile = this.addToProfile.bind(this)
    // this.postAdd = this.postAdd.bind(this);
@@ -58,22 +61,48 @@ let postObject ={
 this.postAdd(postObject);
 }
 
+iconBookmarkReady = (e) => {
+   this.setState({
+      iconSelected: false,
+   })
+}
+
+iconBookmarkResting = (e) => {
+   this.setState({
+      iconSelected: true,
+   })
+}
+
 render(){
+   let bookmarkIcon;
+   if(this.state.iconSelected === true) {
+      console.log("STAR")
+      bookmarkIcon=(
+         <FontAwesomeIcon onClick={this.iconBookmarkReady} className="fontAwe" size="4x" icon={["fa", "star"]}/>
+      )
+      } else {
+         console.log("BOOKMARK")
+         bookmarkIcon=(
+            <FontAwesomeIcon onClick={this.iconBookmarkResting} className="fontAwe" size="4x" icon={['fa', 'bookmark']}/>
+         )
+         
+      }
    const news = this.state.news ?
    this.state.news.map((article, index) => (
       <div key={index}>
-      <Container>
+      <Container className="card">
          <Row>
-         <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={article.urlToImage} />
-               <Card.Body className="cardBody">
-                  <Card.Title>{article.title}</Card.Title>
-                  <Card.Text> {article.description} by {article.author}</Card.Text>
-                  {/* <Button variant="primary">Go somewhere</Button> */}
+            <Card className="" style={{width:"18em"}}>
+               <Card.Img variant="top" src={article.urlToImage} />
+                  <Card.Body className="cardBody">
+                     <Card.Title>{article.title}</Card.Title>
+                     <Card.Text> {article.description} by {article.author}</Card.Text>
+                     {/* <Button variant="primary">Go somewhere</Button> */}
                      <Card.Link href={article.url}> Link </Card.Link> <br /> 
-                     <Button onClick={() => this.addToProfile(article)}> Add To Profile </Button>
-            </Card.Body>
-         </Card>
+
+                     <Button onClick={() => this.addToProfile(article)}> {bookmarkIcon} </Button>
+               </Card.Body>
+            </Card>
          </Row>
       </Container>
       </div>
@@ -86,17 +115,19 @@ render(){
                <source src={Vid} type="video/mp4" />
             </video>
       </Jumbotron>
-         <br /> 
+   <br /> 
+   <div className="newsBox">
          <h3> Top Stories </h3>
-         <Row>
-            {news}
-         </Row>
+      <Row>
+         
+         {news}
+      </Row>
+   </div>
       </div>
    
    
    )  
 }
-
 
 }
 export default Home; 
