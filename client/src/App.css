@@ -57,11 +57,14 @@ line-height: 2em;
   text-align: center;
 }
 
+.libraryBox {
+  margin: 0 auto;
+}
+
 .pieChart{
   text-align: center;
   margin: 0 auto;
 }
-
 
 /* ======= */
 .brand {

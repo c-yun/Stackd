@@ -28,4 +28,18 @@ const School = (props) => {
    )
 }
 
+// const School = (props) => {
+//    let devSchool = props.bootcamp.schools.map((devs, index) => {
+//       <SchoolCard key={index} img={devs.img} cost={devs.cost} len={devs.len} loc={devs.loc} />
+//    return (
+//       <div className='School'>
+//          <section>
+//             <h2>Coding Bootcamp Comparison</h2>
+//             {devSchool}
+//          </section>
+//       </div>
+//       )
+//    })
+// }
+
 export default School; 

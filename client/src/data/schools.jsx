@@ -5,7 +5,7 @@ export const schools = [
     cost: 'Cost: $13,950 - $14,950',
     len: 'Length: 12 weeks',
     loc: 'Locations: Atlanta, Austin, Boston, Chicago, Dallas, Denver, Los Angeles, New York City, Providence, San Diego, San Francisco, Seattle, Stamford, Toronto, Washington DC',
-    img: 'https://i.imgur.com/SmPccL2.png',
+    img: 'https://ga-core.s3.amazonaws.com/cms/files/files/000/000/886/original/ga-logo-gear.png',
     url: 'https://generalassemb.ly/'
 },
 {
@@ -13,7 +13,7 @@ export const schools = [
     cost: 'Cost: $10,495 - $14,995',
     len: 'Length: 14 weeks',
     loc: 'Locations: Chicago, Seattle, Silicon Valley, Los Angeles, Berkeley, Dallas, Tysons Corner, Tulsa, Boise',
-    img: '',
+    img: 'https://cdn2.codingdojo.com/images/global/coding_dojo_logo_white.png',
     url: 'https://www.codingdojo.com/'
 },
 {
@@ -21,7 +21,7 @@ export const schools = [
     cost: 'Cost: $15,000',
     len: 'Length: 14 weeks',
     loc: 'Locations: New York, Houston, Atlanta, Seattle, Washington DC',
-    img: '',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/6/61/FS_wiki.png',
     url: 'https://flatironschool.com/'
 },
 {
@@ -29,7 +29,7 @@ export const schools = [
     cost: 'Cost: $17,980',
     len: 'Length: 12 weeks',
     loc: 'Locations: Seattle, San Francisco, Denver, Boulder, Austin, New York, Phoenix, London',
-    img: '',
+    img: 'https://brandfolder.com/galvanize/logo/galvanize-primary-logo.png',
     url: 'https://www.galvanize.com/'
 },
 {
@@ -37,7 +37,7 @@ export const schools = [
     cost: 'Cost: $3,000 refundable deposit + $25,000 once you find a job',
     len: 'Length: 12 weeks',
     loc: 'Locations: San Francisco, New York',
-    img: '',
+    img: 'https://d1vki863cvir6c.cloudfront.net/uploads/topic/image/4/appacademy_logo.png',
     url: 'https://www.appacademy.io/'
 },
 {
@@ -45,7 +45,7 @@ export const schools = [
     cost: 'Cost: $17,980',
     len: 'Length: 13 weeks',
     loc: 'Locations: San Francisco, Austin, Los Angeles, New York City',
-    img: '',
+    img: 'https://static1.squarespace.com/static/ta/522a22cbe4b04681b0bff826/3231/assets/images/logo/company/no-padding/hack-reactor.png',
     url: 'https://www.hackreactor.com/'
 },
 {
