@@ -3,19 +3,21 @@ import React, { Component } from 'react';
 import {Card, Button, Row, Col, Jumbotron, Container, CardGroup, CardDeck} from "react-bootstrap"
 import axios from 'axios';
 import Vid from "./Images&Video/stacdVideo.mp4"
-import { faBookmark } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark, faStar} from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faBookmark)
+library.add(faBookmark, faStar)
+
 
 class Home extends Component {
 constructor(props){
    super(props)
    this.state = {
-      newsApi: []
+      newsApi: [],
+      iconSelected: true,
    }
    this.addToProfile = this.addToProfile.bind(this)
    // this.postAdd = this.postAdd.bind(this);
@@ -58,7 +60,32 @@ let postObject ={
 this.postAdd(postObject);
 }
 
+iconBookmarkReady = (e) => {
+   this.setState({
+      iconSelected: false,
+   })
+}
+
+iconBookmarkResting = (e) => {
+   this.setState({
+      iconSelected: true,
+   })
+}
+
 render(){
+   let bookmarkIcon;
+   if(this.state.iconSelected === true) {
+      console.log("bookmark2")
+      bookmarkIcon=(
+         <FontAwesomeIcon onClick={this.iconBookmarkReady} className="fontAwe" size="4x" icon={["fa", "star"]}/>
+      )
+      } else {
+         console.log("bookmark1")
+         bookmarkIcon=(
+            <FontAwesomeIcon onClick={this.iconBookmarkResting} className="fontAwe" size="4x" icon={['fa', 'bookmark']}/>
+         )
+         
+      }
    const news = this.state.news ?
    this.state.news.map((article, index) => (
       <div key={index}>
@@ -71,7 +98,7 @@ render(){
                      <Card.Text> {article.description} by {article.author}</Card.Text>
                      {/* <Button variant="primary">Go somewhere</Button> */}
                      <Card.Link href={article.url}> Link </Card.Link> <br /> 
-                     <Button onClick={() => this.addToProfile(article)}> Add To Profile </Button>
+                     <Button onClick={() => this.addToProfile(article)}> {bookmarkIcon} </Button>
                </Card.Body>
             </Card>
          </Row>
@@ -90,6 +117,7 @@ render(){
    <div className="newsBox">
          <h3> Top Stories </h3>
       <Row>
+         
          {news}
       </Row>
    </div>
