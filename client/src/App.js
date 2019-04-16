@@ -25,7 +25,8 @@ class App extends Component {
       user: null,
       errorMessage: '',
       lockedResult: '',
-      bootcamp: {schools}
+      bootcamp: {schools},
+      loginSelected: false,
     }
     this.liftTokenToState = this.liftTokenToState.bind(this)
     this.checkForLocalToken = this.checkForLocalToken.bind(this)
@@ -44,7 +45,7 @@ class App extends Component {
       this.setState({
         token: '',
         user: null,
-        loginSelected: false,
+        
       })
     } else {
       // Found a token, send it to be verified
@@ -75,8 +76,8 @@ class App extends Component {
   // data contains user and token
   liftTokenToState({token, user}) {
     this.setState({
-      token,
-      user
+      token: token,
+      user: user,
     })
   }
 
@@ -99,8 +100,8 @@ class App extends Component {
         Authorization: `Bearer ${this.state.token}`
       }
     }
-    axios.get('/locked/test', config).then(res => {
-      console.log('this is the locked response:', res)
+    axios.get('/locked/test', config).then((res) => {
+      // console.log('this is the locked response:', res)
       this.setState({
         lockedResult: res.data
       })
@@ -121,16 +122,16 @@ signUpClick = (e) =>{
 
 
   render() {
-    let user = this.state.user
-    let contents;
+    // let contents;
     let logbox;
-    if(this.state.loginSelected == true){
-      logbox =(
-      <>
+    let logger; 
+    if(this.state.loginSelected === true){
+      logbox = (
+        <>
       <div className='logboxContainer'>
         <div className='logboxLoginDiv'>
-          <p className='loginText' onClick={this.loginClick}> {' '} Login{' '} </p>
-          <p className='signupText' onClick={this.signUpClick}> {' '} Register{' '} </p>
+          <Button variant="info" className='signloginBtn' onClick={this.loginClick}> {' '} Login{' '} </Button>
+          <Button variant="info" className='signloginBtn' onClick={this.signUpClick}> {' '} Register{' '} </Button>
         </div>
         <Login className='liftStateLogin' liftTokenToState={this.liftTokenToState} />
       </div>
@@ -141,66 +142,64 @@ signUpClick = (e) =>{
         <>
           <div className='logboxContainer'>
             <div className='logboxLoginDiv'>
-              <p
+              <Button variant="info"
                 className={`${
                   this.state.loginSelected ? 'loginText' : 'loginTextSelected'
-                }`}
-                onClick={this.loginClick}
-              >
+                }`} onClick={this.loginClick}>
                 Login
-              </p>
-              <p
+              </Button>
+              <Button variant="info"
                 className={`${
                   this.state.loginSelected ? 'signupText' : 'signupTextSelected'
                 }`}
                 onClick={this.signUpClick}
               >
                 Register
-              </p>
+              </Button>
             </div>
             <Signup liftTokenToState={this.liftTokenToState} />
           </div>
         </>
       );
     }
+    let user = this.state.user;
+    let contents;
     if (user) {
       contents = (
-      <div className="homeBox">
-        <BrowserRouter>
-          <div className="navBarBox">
-            <nav>
-              <Navbar bg="dark" variant="dark">
-                <Navbar.Brand className='brand' href="#home">Stackd</Navbar.Brand>
-                  <Nav className="mr-auto">
-                    <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/school">Involvement</Nav.Link>
-                    <Nav.Link href="/trending">Trending</Nav.Link>
-                    <Nav.Link href="/library">Library</Nav.Link>
-                    <Nav.Link href={`/profile/${this.state.user._id}`}>Profile</Nav.Link>
+      <BrowserRouter>
+        <div className="homeBox">
+            <div className="navBarBox">
+              <nav>
+                <Navbar bg="dark" variant="dark">
+                  <Navbar.Brand href="/" className='brand'>Stackd</Navbar.Brand>
+                    <Nav className="mr-auto">
+                      <Nav.Link href="/">Home</Nav.Link>
+                      <Nav.Link href="/school">Involvement</Nav.Link>
+                      <Nav.Link href="/trending">Trending</Nav.Link>
+                      <Nav.Link href="/library">Library</Nav.Link>
+                      <Nav.Link href="/profile">Profile</Nav.Link>
                   </Nav>
                 </Navbar>
             </nav>
           </div>
               {/* <UserProfile user={user} logout={this.logout} /> */}
               {/* <p>{this.state.lockedResult}</p> */}
-            <Route path="/" exact render={() => <Home Home={Home} user={this.state.user} /> }/> 
+            <Route path="/" exact render={() => <Home Home={Home} /> }/> 
             <Route path="/library" exact render={() => <Library Library={Library} />} /> 
-            <Route path={`/profile/${this.state.user._id}`} render={() => ( <UserProfile user={this.state.user} logout={this.logout} /> )} />
+            <Route path="/profile" exact render={() => ( <UserProfile user={this.state.user} logout={this.logout} /> )} />
             <Route path="/trending" exact render={() => <Trending Trending={Trending} /> }/>  
             <Route path="/school" exact render={() => <School bootcamp={this.state.bootcamp} /> } /> 
-        </BrowserRouter> 
-      </div>
+        </div>
+      </BrowserRouter> 
       )
     } else {
       contents = <div className='logBox'>{logbox}</div>
-      
     }
     return (
       <div className="App">
-        <div className='content-box'>
-        <div className='App'>{contents}</div>
-        </div>  
-        {/* <Footer />  */}
+          <div className='contentBox'>
+              {contents}
+            </div>
       </div>
     );
   }
@@ -212,4 +211,6 @@ signUpClick = (e) =>{
 // <Route path='/' exact render={() => (<Home user={this.state.user} logout={this.logout} />)} />
 
 
+{/* // {`${this.state.loginSelected ? 'signupText' : 'signupTextSelected'}`}onClick={this.signUpClick} */}
+{/* // // {`${this.state.loginSelected ? 'loginText' : 'loginTextSelected'}`} */}
 export default App;

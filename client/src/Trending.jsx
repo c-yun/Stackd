@@ -402,45 +402,63 @@ Java = [
    render() {
       return (
       <div className="trendingBox">
-         <h1>Hiring Trends</h1>
-      <Row>
-         <Col>
-      <h2> React </h2> <FontAwesomeIcon className="fontAwe" size="4x" icon={['fab', 'react']} />
-      <AreaChart className="trendingBox" width={500} height={200} data={this.React} margin={{ top: 10, right: 30, left: 0, bottom: 0,}}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Area type="monotone" dataKey="uv" stroke="#000" fill="#4F86F7" />
-      </AreaChart>
-      <h2> Python </h2> <FontAwesomeIcon className="fontAwe" size="4x" icon={['fab', 'python']} />
-      <AreaChart  className="trendingBox" width={500} height={200} data={this.Python} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Area connectNulls type="monotone" dataKey="uv" stroke="#000" fill="#4F86F7" />
-      </AreaChart>
-      </Col>
-      <Col>
-      <h2> Javascript </h2> <FontAwesomeIcon className="fontAwe" size="4x" icon={['fab', 'js-square']} /> 
-      <AreaChart className="trendingBox"  width={500} height={200} data={this.Javascript} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Area connectNulls type="monotone" dataKey="uv" stroke="#000" fill="#4F86F7" />
-      </AreaChart>
-      <h2> Java </h2> <FontAwesomeIcon className="fontAwe" size="4x" icon={['fab', 'java']} />
-      <AreaChart  className="trendingBox" width={500} height={200} data={this.Java} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Area connectNulls type="monotone" dataKey="uv" stroke="#000" fill="#4F86F7" />
-      </AreaChart>
-      </Col>
-      </Row>
+         <h1 className="hiringHeader">Hiring Trends</h1>
+            <div className="graphBox">
+               <Row>
+                  <Col>
+                     <h2> React </h2> <FontAwesomeIcon className="fontAwe" size="4x" icon={['fab', 'react']} />
+                     <Card>
+                        <Card.Body>
+                        <AreaChart className="trendingBox" width={500} height={200} data={this.React} margin={{ top: 10, right: 30, left: 0, bottom: 0,}}>
+                           <CartesianGrid strokeDasharray="3 3" />
+                           <XAxis dataKey="name" />
+                           <YAxis />
+                           <Tooltip />
+                           <Area type="monotone" dataKey="uv" stroke="#000" fill="#4F86F7" />
+                        </AreaChart>
+                        </Card.Body>
+                        </Card>
+                     <Card>
+                        <Card.Body>
+                     <h2> Python </h2> <FontAwesomeIcon className="fontAwe" size="4x" icon={['fab', 'python']} />
+                        <AreaChart  className="trendingBox" width={500} height={200} data={this.Python} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
+                           <CartesianGrid strokeDasharray="3 3" />
+                           <XAxis dataKey="name" />
+                           <YAxis />
+                           <Tooltip />
+                           <Area connectNulls type="monotone" dataKey="uv" stroke="#000" fill="#4F86F7" />
+                        </AreaChart>
+                        </Card.Body>
+                     </Card>
+                  </Col>
+                  <Col>
+                     <Card>
+                        <Card.Body>
+                     <h2> Javascript </h2> <FontAwesomeIcon className="fontAwe" size="4x" icon={['fab', 'js-square']} /> 
+                        <AreaChart className="trendingBox"  width={500} height={200} data={this.Javascript} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
+                           <CartesianGrid strokeDasharray="3 3" />
+                           <XAxis dataKey="name" />
+                           <YAxis />
+                           <Tooltip />
+                           <Area connectNulls type="monotone" dataKey="uv" stroke="#000" fill="#4F86F7" />
+                        </AreaChart>
+                        </Card.Body>
+                     </Card>
+                     <Card>
+                        <Card.Body>
+                     <h2> Java </h2> <FontAwesomeIcon className="fontAwe" size="4x" icon={['fab', 'java']} />
+                        <AreaChart  className="trendingBox" width={500} height={200} data={this.Java} margin={{top: 10, right: 30, left: 0, bottom: 0, }}>
+                           <CartesianGrid strokeDasharray="3 3" />
+                           <XAxis dataKey="name" />
+                           <YAxis />
+                           <Tooltip />
+                           <Area connectNulls type="monotone" dataKey="uv" stroke="#000" fill="#4F86F7" />
+                        </AreaChart>
+                           </Card.Body>
+                        </Card>
+                     </Col>
+                  </Row>
+               </div>
       </div>
       );
    }

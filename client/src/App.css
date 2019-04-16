@@ -2,12 +2,14 @@
 
 .App {
   text-align: center;
+  /* background-color: black; */
+  /* color: white; */
 }
 
 .homeBox{
   text-align: center;
   margin: 0 auto;
-  border: 3px solid purple; 
+  /* border: 3px solid purple;  */
 }
 
 .newsBox{
@@ -15,7 +17,7 @@
   float: none; /* Added */
   margin-bottom: 10px; /* Added */
   padding-left: 10px;
-  border: 4px solid blue;
+  /* border: 4px solid blue; */
   width: 75%;
 }
 .App-logo {
@@ -53,11 +55,7 @@ vertical-align: middle;
 line-height: 2em; 
 } 
 
-.trendingBox{
-  border: 4px solid red; 
-  margin: 0 auto;
-  text-align: center;
-}
+
 
 .libraryBox {
   margin: 0 auto;
@@ -78,7 +76,7 @@ line-height: 2em;
   position: relative;
   z-index: -2;
   height: 62.5vh;
-  background-color: black;
+  background-color: white;
   /* padding: 0px !important; */
 }
 
@@ -117,7 +115,7 @@ line-height: 2em;
 /* ////////////////////////////// HEADER HOME JSX ////////////////////////////// */
 .headerTopStories{
   font-family: 'Cute Font';
-  border: 3px solid green;
+  /* border: 3px solid green; */
   width: 70%;
   height: 70%;
   text-align: center;
@@ -127,11 +125,13 @@ line-height: 2em;
 .headerTopStory{
   font-family: 'Cute Font';
   font-size: 5em;
+  background-color:white;
+  color: black;
 }
 
 /* ////////////////////////////// USERPROFILE /////////////////////////////////  */
 .userProfileInternalBox{
-  border: 4px solid red; 
+  /* border: 4px solid red;  */
   margin: 0 auto;
   text-align: center;
   width: 100%;
@@ -139,20 +139,61 @@ line-height: 2em;
 }
 
 .removeBtn{
-  border: 3px solid purple;
+  /* border: 3px solid purple; */
   margin: 0 auto;
   width: 20%;
   height: 50%;
+}
+
+.userProfileHeader{
+  font-family: 'Cute Font';
+  font-size: 5em;
 }
 /* //////////////////////////////// SCHOOL ////////////////////////////////  */
 .devSchoolBox{
   margin: 0 auto;
   width: 50%;
   height: 50%;
-  border: 4px solid green;
+  /* border: 4px solid green; */
 }
 
 .schoolHeader{
   font-family: 'Cute Font';
   font-size: 5em;
+}
+
+/* /////////////////////////////////// TRENDING /////////////////////// */
+
+.trendingBox{
+  /* border: 4px solid red;  */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.graphBox{
+  width: 50%;
+  height: 50%;
+  /* border: 4px solid teal; */
+  margin: 0 auto;
+}
+
+.hiringHeader{
+  font-family: 'Cute Font';
+  font-size: 5em;
+}
+
+/* //////////////////////// LOGBOX //////////////////////////////////// */
+.logBox{
+  width: 40%;
+  height: 50%;
+  border: 2px dashed black;
+  margin: 0 auto;
+}
+.logboxLoginDiv{
+  margin: 0 auto;
+}
+.signloginBtn{
+  width: 50%;
+  height: 100%;
+  /* border: 3px solid palegreen; */
 }
