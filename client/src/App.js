@@ -26,6 +26,7 @@ class App extends Component {
       errorMessage: '',
       lockedResult: '',
       bootcamp: {schools},
+      loading: true
       loginSelected: false,
     }
     this.liftTokenToState = this.liftTokenToState.bind(this)
@@ -71,6 +72,7 @@ class App extends Component {
 
   componentDidMount() {
     this.checkForLocalToken()
+    loadingScreen().then(() => this.setState({ loading: false }));
   }
 
   // data contains user and token
@@ -122,6 +124,12 @@ signUpClick = (e) =>{
 
 
   render() {
+    const {loading} = this.state
+    if (loading) {
+      return null;
+    }
+    let user = this.state.user
+=======
     // let contents;
     let logbox;
     let logger; 
@@ -203,6 +211,9 @@ signUpClick = (e) =>{
       </div>
     );
   }
+}
+function loadingScreen() {
+  return new Promise((resolve) => setTimeout(() => resolve(), 500));
 }
 
 
