@@ -26,7 +26,7 @@ class App extends Component {
       errorMessage: '',
       lockedResult: '',
       bootcamp: {schools},
-      loading: true
+      loading: true,
       loginSelected: false,
     }
     this.liftTokenToState = this.liftTokenToState.bind(this)
@@ -128,8 +128,6 @@ signUpClick = (e) =>{
     if (loading) {
       return null;
     }
-    let user = this.state.user
-=======
     // let contents;
     let logbox;
     let logger; 
@@ -185,16 +183,16 @@ signUpClick = (e) =>{
                       <Nav.Link href="/school">Involvement</Nav.Link>
                       <Nav.Link href="/trending">Trending</Nav.Link>
                       <Nav.Link href="/library">Library</Nav.Link>
-                      <Nav.Link href="/profile">Profile</Nav.Link>
+                      <Nav.Link href={`/profile/${this.state.user._id}`}>Profile</Nav.Link>
                   </Nav>
                 </Navbar>
             </nav>
           </div>
               {/* <UserProfile user={user} logout={this.logout} /> */}
               {/* <p>{this.state.lockedResult}</p> */}
-            <Route path="/" exact render={() => <Home Home={Home} /> }/> 
+            <Route path="/" exact render={() => <Home Home={Home} user={this.state.user} /> }/> 
             <Route path="/library" exact render={() => <Library Library={Library} />} /> 
-            <Route path="/profile" exact render={() => ( <UserProfile user={this.state.user} logout={this.logout} /> )} />
+            <Route path={`/profile/${this.state.user._id}`} exact render={() => ( <UserProfile user={this.state.user} logout={this.logout} /> )} />
             <Route path="/trending" exact render={() => <Trending Trending={Trending} /> }/>  
             <Route path="/school" exact render={() => <School bootcamp={this.state.bootcamp} /> } /> 
         </div>

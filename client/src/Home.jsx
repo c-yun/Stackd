@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // require('dotenv').config();
-import {Card, Button, Row, Col, Jumbotron, Container, CardGroup, CardDeck, Image , Media} from "react-bootstrap"
+import {Card, Button, Row, Col, Jumbotron, Container, CardGroup, CardDeck, Image , Alert} from "react-bootstrap"
 import axios from 'axios';
 import Vid from "./Images&Video/stacdVideo.mp4"
 import { faBookmark, faStar} from '@fortawesome/free-solid-svg-icons';
@@ -19,8 +19,7 @@ constructor(props){
    super(props)
    this.state = {
       newsApi: [],
-      iconSelected: true,
-      otherIcon: false, 
+      savedBookmark: true, 
    }
    this.addToProfile = this.addToProfile.bind(this)
    // this.postAdd = this.postAdd.bind(this);
@@ -54,6 +53,7 @@ postAdd = (object) => {
    });
 }
 addToProfile = (article) => {
+   console.log("Added to profile")
 let postObject ={
    title: article.title,
    author: article.author,
@@ -63,37 +63,33 @@ let postObject ={
 this.postAdd(postObject);
 }
 
-iconBookmarkReady = (e) => {
+iconBookmarkPicked = (e) => {
    this.setState({
-      iconSelected: false,
+      savedBookmark: false,
    })
 }
 
-iconBookmarkResting = (e) => {
-   this.setState({
-      iconSelected: true,
-   })
-}
 
 render(){
    let bookmarkIcon;
-   if(this.state.iconSelected === true) {
-      console.log("STAR")
-      bookmarkIcon=(
-         <FontAwesomeIcon onClick={this.iconBookmarkReady} className="fontAwe" size="4x" icon={["fa", "star"]}/>
+   if(this.state.savedBookmark === false) {
+      console.log("bookmark selected")
+      return(
+            <div>  
+               <Alert variant="success">
+               <Alert.Heading>Hey, nice to see you</Alert.Heading>
+            </Alert>
+         </div>
       )
       } else {
-         console.log("BOOKMARK")
-         bookmarkIcon=(
-            <FontAwesomeIcon onClick={this.iconBookmarkResting} className="fontAwe" size="4x" icon={['fa', 'bookmark']}/>
-         )
+         console.log("nothing bookmarked")
          
       }
    const news = this.state.news ?
    this.state.news.map((article, index) => (
       <div key={index} className="cardBox">
       <Col>
-         <Card style={{width:"20em"}}>
+         <Card style={{width:"22em"}}>
             <Card.Img variant="top" src={article.urlToImage} />
                <Card.Body className="cardBody">
                   <h3> {article.title}</h3>
@@ -108,7 +104,9 @@ render(){
                   <Card.Link href={article.url}><Button>Article</Button></Card.Link>
                      </Col>
                      <Col>
-                  <Button onClick={() => this.addToProfile(article)}> bookmark</Button>
+                     <div onClick={() => this.iconBookmarkPicked }className="bookmark">
+                     <Button onClick={() => this.addToProfile(article)}> bookmark </Button>
+                     </div>
                      </Col>
                   </Row>
                </Card.Body>
@@ -120,7 +118,7 @@ render(){
    return(
       <div className="homeBox">
          <Jumbotron fluid>
-            <video className="video-background" preload="true" muted="true" autoplay="true" loop="true"> 
+            <video className="video-background" preload="true" muted={true} autoPlay={true} loop={true}> 
                <source src={Vid} type="video/mp4" />
             </video> 
          </Jumbotron> 
@@ -132,7 +130,7 @@ render(){
    <div className="newsBox">
       <Row>
          {news}
-         <h1> Hello stuf here </h1>
+         {/* <h1> Hello stuf here </h1> */}
       </Row>
    </div>
 </div>
