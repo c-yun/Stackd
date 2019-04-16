@@ -66,6 +66,8 @@ line-height: 2em;
 
 .libraryBox {
   margin: 0 auto;
+  text-decoration: none;
+  color: inherit;
 }
 
 .pieChart{

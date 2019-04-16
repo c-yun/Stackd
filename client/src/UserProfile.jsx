@@ -18,8 +18,8 @@ componentDidMount() {
         console.log(res.data)
         this.setState({
             articles: res.data
-        });
-    });
+        })
+    })
 }
 filter = (id) =>{
     console.log("filter")
