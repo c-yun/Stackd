@@ -7,7 +7,7 @@
 .homeBox{
   text-align: center;
   margin: 0 auto;
-  /* border: 3px solid purple;  */
+  border: 3px solid purple; 
 }
 
 .newsBox{
@@ -52,7 +52,7 @@ line-height: 2em;
 } 
 
 .trendingBox{
-  /* border: 4px solid red;  */
+  border: 4px solid red; 
   margin: 0 auto;
   text-align: center;
 }
@@ -94,9 +94,18 @@ line-height: 2em;
   max-height: 50%;
 }  */
 
-.card{
-  /* padding-left: 30px */
-  margin: 0 auto; /* Added */
+/* .card{
   float: none; /* Added */
-  margin-bottom: 10px; /* Added */
+
+
+/* .cardBox{
+  margin: 0 auto;
+  text-align: center;
+} */
+
+.imageBox{
+  text-align: center;
+  margin: 0 auto;
+  width: auto; 
+  height: 100%;
 }

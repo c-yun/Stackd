@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // require('dotenv').config();
-import {Card, Button, Row, Col, Jumbotron, Container, CardGroup, CardDeck} from "react-bootstrap"
+import {Card, Button, Row, Col, Jumbotron, Container, CardGroup, CardDeck, Image} from "react-bootstrap"
 import axios from 'axios';
 import Vid from "./Images&Video/stacdVideo.mp4"
 import { faBookmark, faStar} from '@fortawesome/free-solid-svg-icons';
@@ -26,7 +26,7 @@ constructor(props){
 
 
 componentDidMount(){
-   let newsApi = `https://newsapi.org/v2/everything?domains=techcrunch.com,wired.com,&language=en&pageSize=40&apiKey=47b1d9f9ee354c3992a16d4f94dddc69`
+   let newsApi = `https://newsapi.org/v2/everything?domains=techcrunch.com&language=en&pageSize=40&apiKey=47b1d9f9ee354c3992a16d4f94dddc69`
    axios.get(newsApi).then(response => {
       console.log(response.data.articles)
       this.setState({
@@ -89,46 +89,48 @@ render(){
       }
    const news = this.state.news ?
    this.state.news.map((article, index) => (
-      <div key={index}>
-      <Container className="card">
-         <Row>
-            <Card className="" style={{width:"18em"}}>
-               <Card.Img variant="top" src={article.urlToImage} />
-                  <Card.Body className="cardBody">
-                     <Card.Title>{article.title}</Card.Title>
-                     <Card.Text> {article.description} by {article.author}</Card.Text>
-                     {/* <Button variant="primary">Go somewhere</Button> */}
-                     <Card.Link href={article.url}> Link </Card.Link> <br /> 
-
-                     <Button onClick={() => this.addToProfile(article)}> {bookmarkIcon} </Button>
-               </Card.Body>
-            </Card>
-         </Row>
-      </Container>
+      <div key={index} className="cardBox">
+      {/* <Container fluid> */}
+      {/* <Row  fluid className=""> */}
+      {/* <Container fluid> */}
+      {/* <Image className="imageBox" src={article.urlToImage} fluid /> */}
+      {/* </Container> */}
+      {/* </Row> */}
+      {/* </Container> */}
       </div>
    )): ""; 
 
    return(
       <div className="homeBox">
-         <Jumbotron fluid>
-            <video className="video-background" preload="true" muted="true" autoplay="true" loop="true">
-               <source src={Vid} type="video/mp4" />
-            </video>
-      </Jumbotron>
+         {/* <Jumbotron fluid>
+            
+      </Jumbotron> */}
    <br /> 
    <div className="newsBox">
-         <h3> Top Stories </h3>
-      <Row>
-         
-         {news}
-      </Row>
+      <h3> Top Stories </h3>
+            {news}
    </div>
-      </div>
+</div>
    
    
    )  
 }
-
 }
 export default Home; 
 
+
+
+
+{/* <Card style={{width:"18em", flex:1}}>
+   <Card.Img variant="top" src={article.urlToImage} />
+      <Card.Body className="cardBody">
+         <Card.Title>{article.title}</Card.Title>
+         <Card.Text> {article.description} by {article.author}</Card.Text>
+         <Card.Link href={article.url}> Link </Card.Link> <br /> 
+         <Button onClick={() => this.addToProfile(article)}> {bookmarkIcon} </Button>
+   </Card.Body>
+</Card> */}
+
+{/* <video className="video-background" preload="true" muted="true" autoplay="true" loop="true"> */}
+               // <source src={Vid} type="video/mp4" />
+            {/* </video> */}
