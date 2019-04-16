@@ -10,7 +10,7 @@ constructor(props){
         articles: [],
         currentArticle: null,
     }
-    // this.removeArticle = this.removeArticle.bind(this); 
+    this.selectArticle = this.selectArticle.bind(this); 
 }
 
 componentDidMount() {
@@ -40,12 +40,21 @@ removeArticle = (id) => {
     })
 }
 
-
+selectArticle = (article) => {
+    console.log("SELECTING AN ARTICLE !!!!! ")
+    axios.get(`/profile/${this.props.user._id}/articles/${article._id}`)
+    .then((res) => {
+        this.setState({
+            currentArticle: res.data,
+        })
+    })
+}
 
 render(){
+    let selectArticle; 
     let articles = this.state.articles.map((article, index) => (
-        <div key={index} className="savedArticles">
-        <Card>  
+        <div key={index} className="savedArticles" >
+        <Card onClick={() => this.selectArticle(article)}>  
                 <h2>{article.title}</h2>
                 <h4>Published By: {article.author}</h4>
                 <p><a href={article.url}>Source</a></p>

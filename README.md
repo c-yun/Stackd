@@ -20,7 +20,7 @@
 
 
 ## User Storys 
-
+Bob loves to stay connected with the world and enjoys the tech industry, however; Bob does wishes he can just find a news
 
 
 ## Entity Relation Diagram 
