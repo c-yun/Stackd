@@ -3,7 +3,7 @@ export const schools = [
 {
     campus: 'GA',
     cost: 'Cost: $13,950 - $14,950',
-    len: 'Length: 12 weeks',
+    len: 'Duration: 3 month Intensive or 6 month Progressive',
     loc: 'Locations: Atlanta, Austin, Boston, Chicago, Dallas, Denver, Los Angeles, New York City, Providence, San Diego, San Francisco, Seattle, Stamford, Toronto, Washington DC',
     img: 'https://ga-core.s3.amazonaws.com/cms/files/files/000/000/886/original/ga-logo-gear.png',
     url: 'https://generalassemb.ly/'
@@ -11,7 +11,7 @@ export const schools = [
 {
     campus: 'Coding Dojo',
     cost: 'Cost: $10,495 - $14,995',
-    len: 'Length: 14 weeks',
+    len: 'Duration: 14 weeks',
     loc: 'Locations: Chicago, Seattle, Silicon Valley, Los Angeles, Berkeley, Dallas, Tysons Corner, Tulsa, Boise',
     img: 'https://cdn2.codingdojo.com/images/global/coding_dojo_logo_white.png',
     url: 'https://www.codingdojo.com/'
@@ -19,7 +19,7 @@ export const schools = [
 {
     campus: 'Flatiron',
     cost: 'Cost: $15,000',
-    len: 'Length: 14 weeks',
+    len: 'Duration: 14 weeks',
     loc: 'Locations: New York, Houston, Atlanta, Seattle, Washington DC',
     img: 'https://upload.wikimedia.org/wikipedia/commons/6/61/FS_wiki.png',
     url: 'https://flatironschool.com/'
@@ -27,7 +27,7 @@ export const schools = [
 {
     campus: 'Galvanize',
     cost: 'Cost: $17,980',
-    len: 'Length: 12 weeks',
+    len: 'Duration: 12 weeks',
     loc: 'Locations: Seattle, San Francisco, Denver, Boulder, Austin, New York, Phoenix, London',
     img: 'https://brandfolder.com/galvanize/logo/galvanize-primary-logo.png',
     url: 'https://www.galvanize.com/'
@@ -35,7 +35,7 @@ export const schools = [
 {
     campus: 'App Academy',
     cost: 'Cost: $3,000 refundable deposit + $25,000 once you find a job',
-    len: 'Length: 12 weeks',
+    len: 'Duration: 12 weeks',
     loc: 'Locations: San Francisco, New York',
     img: 'https://d1vki863cvir6c.cloudfront.net/uploads/topic/image/4/appacademy_logo.png',
     url: 'https://www.appacademy.io/'
@@ -43,7 +43,7 @@ export const schools = [
 {
     campus: 'Hack Reactor',
     cost: 'Cost: $17,980',
-    len: 'Length: 13 weeks',
+    len: 'Duration: 13 weeks',
     loc: 'Locations: San Francisco, Austin, Los Angeles, New York City',
     img: 'https://static1.squarespace.com/static/ta/522a22cbe4b04681b0bff826/3231/assets/images/logo/company/no-padding/hack-reactor.png',
     url: 'https://www.hackreactor.com/'
@@ -51,7 +51,7 @@ export const schools = [
 {
     campus:'DevMountain',
     cost: 'Cost: $10,900 - $11,900',
-    len: 'Length: 13 weeks',
+    len: 'Duration: 13 weeks',
     loc: 'Locations: Provo, Phoenix, Dallas',
     img: '',
     url: 'https://devmountain.com/'
@@ -59,7 +59,7 @@ export const schools = [
 {
     campus: 'Hackbright Academy',
     cost: 'Cost: $16,895',
-    len: 'Length: 12 weeks',
+    len: 'Duration: 12 weeks',
     loc: 'Locations: San Francisco, Oakland, San Jose',
     img: '',
     url: 'https://hackbrightacademy.com/'
@@ -67,7 +67,7 @@ export const schools = [
 {
     campus: 'Coding Temple',
     cost: 'Cost: $11,000 - $12,495',
-    len: 'Length: 10 weeks',
+    len: 'Duration: 10 weeks',
     loc: 'Locations: Boston, Chicago, Dallas, Washington DC',
     img: '',
     url: 'https://codingtemple.com/'
@@ -75,7 +75,7 @@ export const schools = [
 {
     campus: 'The Software Guild',
     cost: 'Cost: $10,000 - $13,750',
-    len: 'Length: 10 weeks',
+    len: 'Duration: 10 weeks',
     loc: 'Locations: Boston, Chicago, Dallas, Washington DC',
     img: '',
     url: 'https://www.thesoftwareguild.com/'

@@ -31,6 +31,8 @@ class App extends Component {
     this.checkForLocalToken = this.checkForLocalToken.bind(this)
     this.logout = this.logout.bind(this)
     this.handleClick = this.handleClick.bind(this)
+    this.loginClick = this.loginClick.bind(this);
+    this.signUpClick = this.signUpClick.bind(this);
   }
 
   checkForLocalToken() {
@@ -41,7 +43,8 @@ class App extends Component {
       localStorage.removeItem('mernToken')
       this.setState({
         token: '',
-        user: null
+        user: null,
+        loginSelected: false,
       })
     } else {
       // Found a token, send it to be verified
@@ -104,9 +107,62 @@ class App extends Component {
     })
   }
 
+loginClick = (e) => {
+  this.setState({
+    loginSelected: true,
+  });
+};
+
+signUpClick = (e) =>{
+  this.setState({
+    loginSelected: false,
+  });
+};
+
+
   render() {
     let user = this.state.user
     let contents;
+    let logbox;
+    if(this.state.loginSelected == true){
+      logbox =(
+      <>
+      <div className='logboxContainer'>
+        <div className='logboxLoginDiv'>
+          <p className='loginText' onClick={this.loginClick}> {' '} Login{' '} </p>
+          <p className='signupText' onClick={this.signUpClick}> {' '} Register{' '} </p>
+        </div>
+        <Login className='liftStateLogin' liftTokenToState={this.liftTokenToState} />
+      </div>
+    </>
+      )
+    } else {
+      logbox = (
+        <>
+          <div className='logboxContainer'>
+            <div className='logboxLoginDiv'>
+              <p
+                className={`${
+                  this.state.loginSelected ? 'loginText' : 'loginTextSelected'
+                }`}
+                onClick={this.loginClick}
+              >
+                Login
+              </p>
+              <p
+                className={`${
+                  this.state.loginSelected ? 'signupText' : 'signupTextSelected'
+                }`}
+                onClick={this.signUpClick}
+              >
+                Register
+              </p>
+            </div>
+            <Signup liftTokenToState={this.liftTokenToState} />
+          </div>
+        </>
+      );
+    }
     if (user) {
       contents = (
       <div className="homeBox">
@@ -117,7 +173,7 @@ class App extends Component {
                 <Navbar.Brand className='brand' href="#home">Stackd</Navbar.Brand>
                   <Nav className="mr-auto">
                     <Nav.Link href="/">Home</Nav.Link>
-                    <Nav.Link href="/school">Dev Camps</Nav.Link>
+                    <Nav.Link href="/school">Involvement</Nav.Link>
                     <Nav.Link href="/trending">Trending</Nav.Link>
                     <Nav.Link href="/library">Library</Nav.Link>
                     <Nav.Link href={`/profile/${this.state.user._id}`}>Profile</Nav.Link>
@@ -136,17 +192,13 @@ class App extends Component {
       </div>
       )
     } else {
-      contents = (
-        <>
-          <Signup liftToken={this.liftTokenToState} />
-          <Login liftToken={this.liftTokenToState} />
-        </>
-      )
+      contents = <div className='logBox'>{logbox}</div>
+      
     }
     return (
       <div className="App">
         <div className='content-box'>
-          {contents}
+        <div className='App'>{contents}</div>
         </div>  
         {/* <Footer />  */}
       </div>
