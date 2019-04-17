@@ -50,9 +50,9 @@ router.get("/:userId/articles", (req, res) => {
 
 router.put("/:userId/edit", (req, res) => {
    console.log("UPDATE ROUTE STARTED");
-   let update = req.body;
+   let bio = req.bio;
    User.findByIdAndUpdate(req.params.id, {
-      $set: update
+      $set: bio
    }, {new: true}, (err, user) => {
       err ? res.send(err) : 
       user.save(() => {
