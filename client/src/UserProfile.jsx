@@ -67,19 +67,7 @@ render(){
         </Card>
         </div>
     ))
-
-    // if (props.user) {
-        
-    //         <>
-    //             <div className='profile-img'>
-    //                 {(props.user.image && (
-    //                     <img src={props.user.image} alt='user' /> )) || (<img src='http://placekitten.com/g/200/200' alt='placeholder' />
-    //         )}
-    //         </div>
-    //         </>
-
-
-    let articles; 
+    // let articles; 
     if (this.state.articles.length){
         articles = this.state.articles.map((article, index) => (
             <div key={index} className="savedArticles" >
