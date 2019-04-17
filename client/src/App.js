@@ -7,6 +7,7 @@ import School from "./School"
 import Trending from "./Trending"
 import Login from './Login';
 import UserProfile from './UserProfile';
+import UpdateProfile from './UpdateProfile';
 import {BrowserRouter, Route, Link} from "react-router-dom"
 import axios from 'axios';
 import {schools} from './data/schools';
@@ -201,6 +202,7 @@ signUpClick = (e) =>{
             {/* <Route path={`/profile/${this.state.user._id}/edit`} exact render={() => (<UserProfile user={this.state.user}  logout={this.logout}  /> )} />   */}
             <Route path="/trending" exact render={() => <Trending Trending={Trending} /> }/>  
             <Route path="/school" exact render={() => <School bootcamp={this.state.bootcamp} /> } /> 
+            <Route path='/profile/update' render={() => <UpdateProfile user={this.state.user} />} />
         </div>
       </BrowserRouter> 
       )

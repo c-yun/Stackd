@@ -6,10 +6,6 @@
   /* color: white; */
 }
 
-.media{
-  margin: 0 auto;
-  display: inline;
-}
 
 .homeBox{
   text-align: center;
@@ -50,7 +46,26 @@
 .App-link {
   color: #61dafb;
 }
+/* ////////////////////////////  LIBRARY //////////////////////////// */
+.libraryBox {
+  margin: 0 auto;
+  height: 100vh;
+}
 
+.libraryBox h1 {
+  font-family: 'Cute Font';
+  font-size: 5em;
+}
+
+.media{
+  margin: 0 auto;
+  display: inline;
+  padding: 10px;
+}
+
+.languages {
+  padding: 10px;
+}
 /* //////////////////////////// FOOTER //////////////////////////////// */
 .footer{
   text-align: center; 
@@ -60,7 +75,7 @@
 }
 
 .footerH3{
-text-align: center;
+  text-align: center;
 vertical-align: middle;
 line-height: 2em; 
 } 
@@ -70,9 +85,6 @@ a {
   color: inherit;
 }
 
-.libraryBox {
-  margin: 0 auto;
-}
 
 .pieChart{
   text-align: center;
@@ -159,6 +171,64 @@ a {
   text-align: center;
   width: 100%;
   height: 100%
+}
+
+/* //////////////////////////////// UPDATE PROFILE ///////////////////////////////// */
+
+.UpdateProfile {
+  height: 100%;
+  position: static;
+}
+
+.UpdateProfile small {
+  display: block;
+  padding: 5px 0;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.UpdateProfile .cloudinary {
+  width: 100%;
+  max-width: 425px;
+  position: absolute;
+  z-index: 10;
+  opacity: 1;
+  transition: all 250ms ease-in-out;
+}
+
+.UpdateProfile .cloudinary.hidden {
+  display: none;
+  opacity: 0;
+}
+
+.UpdateProfile h2 {
+  margin: 0;
+  padding: 15px 0;
+}
+
+.UpdateProfile form button,
+#upload-photo .btn {
+  width: 75%;
+  border: 1px solid black;
+  margin: 0 auto;
+  height: 30px;
+  background-color: #dddddd;
+  border-radius: 5px;
+}
+
+#upload-photo {
+  /* background-color: #008457; */
+  border-radius: 5px;
+  width: 90%;
+  margin: 0 auto;
+  transition: all 250ms ease-in-out;
+}
+
+#upload-photo input {
+  width: 80%;
+  padding: 0;
+  background-color: #ffffff33;
+  border-radius: 5px;
 }
 
 .userProfileInternalBox .profilePic {
