@@ -76,11 +76,11 @@ app.post('/UpdateProfile', parser.single('myPic'), (req,res) => {
     User.findByIdAndUpdate(
         req.body.userId,
         {
-            where: {image: req.file.secure_url}
+            $set: {image: req.file.secure_url}
         },
         {new: true},
         (err, user) => {
-            if (err)
+            if (err) console.log('ERROR', err);
             user.save(() => {
                 res.redirect('profile/update');
             });

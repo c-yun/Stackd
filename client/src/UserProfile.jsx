@@ -92,6 +92,7 @@ render(){
         </div>
     ))
 
+
     ////////////////////////////////////////// BIO UPDATE  //////////////////////////////////////////
     let updateBox;
     if(this.state.updateStart === true){
@@ -135,8 +136,8 @@ render(){
             <div className="userProfileInternalBox">
                 <div className='profilePic'>
                     {(this.props.user.image && (
-                    <img src={this.props.user.image} alt='user' />
-                    )) || (<img src='https://i.imgur.com/UDo14lr.png' alt='placeholder' />
+                        <img src={this.props.user.image} alt='user' />)) || (
+                        <img src='https://i.imgur.com/UDo14lr.png' alt='placeholder' />
                 )}
                 </div>
                 <h4 className="userProfileHeader">Hello {this.props.user.name}, Looking Good </h4>
