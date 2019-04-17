@@ -43,6 +43,7 @@ router.get("/:userId/articles", (req, res) => {
 router.put("/:userId/edit", (req, res) => {
    console.log("UPDATE ROUTE STARTED BACKEND!!!!!");
    let bio = req.bio;
+   console.log(req.bio)
    User.findByIdAndUpdate(req.params.id, {
       $set: bio
    }, {new: true}, (err, user) => {
@@ -53,6 +54,29 @@ router.put("/:userId/edit", (req, res) => {
       })
    })
 })
+
+// router.put("/:userId/edit", (req, res) => {
+//    console.log("this is the backend route", req)
+//    User.findByIdAndUpdate(
+//       req.params.userId,
+//       {
+//          bio:req.body.bio,
+//       }, 
+//       {new: true},
+//       (err, profile) => {
+//          if(err){
+//             return res.status(500).send(err);
+//          } else {
+//             return res.status(203).json(profile)
+//          }
+//       }
+//    )
+// })
+
+
+
+
+
 
 // DELETE
 router.delete("/:userId/articles/:id", (req, res) => {

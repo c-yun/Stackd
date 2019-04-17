@@ -16,6 +16,7 @@ constructor(props){
         currentArticle: null,
         updateStart: false,
         
+        
     }
     this.selectArticle = this.selectArticle.bind(this); 
     this.updateStart = this.updateStart.bind(this);
@@ -40,13 +41,14 @@ filter = (id) =>{
 updateBio = (e) => {
     e.preventDefault()
     e.stopPropagation()
-    console.log(`hiting the updateBio Route✅ ${this.props.user._id}`)
+    console.log(`hiting the update route, AXIOS. PUT. ON USERPROFILE FRONTEND ${this.props.user._id}`)
     axios.put(`/profile/${this.props.user._id}/edit`)
-        .then(response => {
-            console.log(response, "update Bio consoleLog")
-        })
-}   
-
+      .then(response => {
+        console.log(response, "update Bio consoleLog")
+        // props.updateUser();
+      })
+    // props.history.push(`/profile/${this.props.user._id}`)
+  }
 
 updateStart = (e) =>{
     console.log("update conditional rendering")
@@ -97,7 +99,7 @@ render(){
         updateBox = 
             <div className="updateForm" >
                 <form onSubmit={this.updateBio}>
-                <input  value={this.state.bio} type='bio' name='bio' placeholder="looking good 😀" /><br />
+                <input value={this.state.bio} type='bio' name='bio' placeholder="looking good 😀" /><br />
                 <input  type='submit' value='Update!' />
                 </form>
             </div>
