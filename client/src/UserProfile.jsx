@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import axios from "axios"
 import { Button, Card, Col } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faUserAstronaut} from "@fortawesome/free-solid-svg-icons";
+import { library } from '@fortawesome/fontawesome-svg-core';
 
+library.add(faUserAstronaut)
 
 class UserProfile extends Component {
 constructor(props){
@@ -62,9 +67,32 @@ render(){
         </Card>
         </div>
     ))
+
+    // if (props.user) {
+        
+    //         <>
+    //             <div className='profile-img'>
+    //                 {(props.user.image && (
+    //                     <img src={props.user.image} alt='user' /> )) || (<img src='http://placekitten.com/g/200/200' alt='placeholder' />
+    //         )}
+    //         </div>
+    //         </>
+
+
     return (
         <div className='UserProfile'>
+            <section>
+                <header>
+                    {this.props.user && (<Link to='/profile/update'></Link>)}
+                </header>
+            </section>
             <div className="userProfileInternalBox">
+                <div className='profilePic'>
+                    {(this.props.user.image && (
+                    <img src={this.props.user.image} alt='user' />
+                    )) || (<img src='https://i.imgur.com/UDo14lr.png' alt='placeholder' />
+                )}
+                </div>
                 <h4 className="userProfileHeader">Hello, {this.props.user.name}</h4>
                     <Col>
                         {articles}
