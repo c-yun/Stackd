@@ -139,11 +139,13 @@ signUpClick = (e) =>{
         <>
       <div className='logboxContainer'>
         <div className='logboxLoginDiv'>
-          <Button variant="info" className="loginBtn" onClick={this.loginClick}> {' '} Login{' '} </Button>
-          <Button variant="info" className="loginBtn" onClick={this.signUpClick}> {' '} Register{' '} </Button>
+          <Button variant="primary" className="loginBtn" onClick={this.loginClick}> {' '} Login{' '} </Button>
+          
+          <Button variant="primary" className="loginBtn" onClick={this.signUpClick}> {' '} Register{' '} </Button>
         </div>
         <Login className='liftStateLogin' liftTokenToState={this.liftTokenToState} />
-      </div>
+      </div> 
+      {/* <br />  */}
     </>
       )
     } else {
@@ -151,13 +153,13 @@ signUpClick = (e) =>{
         <>
           <div className='logboxContainer'>
             <div className='logboxLoginDiv'>
-              <Button variant="info"
+              <Button variant="primary"
                 className={`${
                   this.state.loginSelected ? 'loginText' : 'loginTextSelected'
                 }`} onClick={this.loginClick}>
                 Login
               </Button>
-              <Button variant="info"
+              <Button variant="primary"
                 className={`${
                   this.state.loginSelected ? 'signupText' : 'signupTextSelected'
                 }`}
@@ -196,8 +198,8 @@ signUpClick = (e) =>{
               {/* <p>{this.state.lockedResult}</p> */}
             <Route path="/" exact render={() => <Home Home={Home} user={this.state.user} /> }/> 
             <Route path="/library" exact render={() => <Library Library={Library} />} /> 
-            <Route path={`/profile/${this.state.user._id}`} exact render={() => ( <UserProfile user={this.state.user} logout={this.logout} /> )} />
-            <Route path={`/profile/${this.state.user._id}/edit`} exact render={() => (<UserProfile user={this.state.user} /> )} />  
+            <Route path={`/profile/${this.state.user._id}`} exact render={() => ( <UserProfile user={this.state.user} checkForLocalToken={this.checkForLocalToken} logout={this.logout} /> )} />
+            {/* <Route path={`/profile/${this.state.user._id}/edit`} exact render={() => (<UserProfile user={this.state.user}  logout={this.logout}  /> )} />   */}
             <Route path="/trending" exact render={() => <Trending Trending={Trending} /> }/>  
             <Route path="/school" exact render={() => <School bootcamp={this.state.bootcamp} /> } /> 
             <Route path='/profile/update' render={() => <UpdateProfile user={this.state.user} />} />
@@ -218,7 +220,7 @@ signUpClick = (e) =>{
 }
 
 function loadingScreen() {
-  return new Promise((resolve) => setTimeout(() => resolve(), 200));
+  return new Promise((resolve) => setTimeout(() => resolve(), 20));
 }
 
 

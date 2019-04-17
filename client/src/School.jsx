@@ -9,7 +9,7 @@ const School = (props) => {
          <Card.Img variant="top" src="" />
          <Card.Body>
          {/* <h1>{devs.campus}</h1> */}
-         <img src={devs.img} />
+         <img src={devs.img} /> 
             <Card.Text>
                <h6>{devs.cost}</h6>
                <h6>{devs.len}</h6>

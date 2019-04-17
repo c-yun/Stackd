@@ -9,7 +9,6 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
-    "canvasjs": "^1.8.1",
     "cloudinary": "^1.14.0",
     "i": "^0.3.6",
     "multer": "^1.4.1",

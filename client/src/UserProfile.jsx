@@ -15,7 +15,7 @@ constructor(props){
         articles: [],
         currentArticle: null,
         updateStart: false,
-        
+        bio: '', 
     }
     this.selectArticle = this.selectArticle.bind(this); 
     this.updateStart = this.updateStart.bind(this);
@@ -40,13 +40,17 @@ filter = (id) =>{
 updateBio = (e) => {
     e.preventDefault()
     e.stopPropagation()
-    console.log(`hiting the update route, AXIOS. PUT. ON USERPROFILE FRONTEND ${this.props.user._id}`)
-    axios.put(`/profile/${this.props.user._id}/edit`)
+    console.log(`hiting the PUT AXIOS ROUTE ON FRONTEND`)
+    axios.put(`/profile/${this.props.user._id}`, {
+        bio: this.state.bio
+    })
       .then(response => {
         console.log(response, "update Bio consoleLog")
-        // props.updateUser();
+        this.setState({updateStart: false}, () => {
+            this.props.checkForLocalToken();
+        })
       })
-    // props.history.push(`/profile/${this.props.user._id}`)
+    // this.state.history.push(`/profile/${this.props.user._id}`)
   }
 
 updateStart = (e) =>{
@@ -55,7 +59,6 @@ updateStart = (e) =>{
         updateStart: true,
     })
 } 
-
 
 removeArticle = (id) => {
     console.log("removing article frontend");
@@ -79,6 +82,12 @@ selectArticle = (article) => {
     })
 }
 
+handleChange = (e) => {
+    this.setState({
+        bio: e.target.value
+    })
+}
+
 render(){
     let selectArticle; 
     let articles = this.state.articles.map((article, index) => (
@@ -86,28 +95,29 @@ render(){
         <Card onClick={() => this.selectArticle(article)}>  
                 <h2>{article.title}</h2>
                 <footer className="blockquote-footer"> {article.author} </footer>
-                <p><a href={article.url}> Link To Article </a></p>
+                <a href={article.url}> <Button variant="success"> Link To Article </Button></a>
             <Button className="removeBtn" variant="secondary" onClick={ () => this.removeArticle(article._id) }> Remove Article </Button>
         </Card>
         </div>
     ))
 
+    ////////////////////////////////////////// BIO CONDITIONAL RENDERING ///////////////////////////////////////////////////
 
     ////////////////////////////////////////// BIO UPDATE  //////////////////////////////////////////
     let updateBox;
     if(this.state.updateStart === true){
         updateBox = 
             <div className="updateForm" >
-                <form>
-                <input onChange={this.updateBio} value={this.state.bio} type='bio' name='bio' placeholder="looking good 😀" /><br />
-                <input  type='submit' value='Update!' />
+                <form  onSubmit={this.updateBio}>
+                    <input value={this.state.bio} type='bio' name='bio' onChange={this.handleChange} placeholder="looking good 😀" /><br />
+                    <input type='submit' value='Update!' />
                 </form>
             </div>
     } else {
         updateBox = 
         <div className="yourBio">
             <p> About Me: {this.props.user.bio} </p>
-            <p onClick={this.updateStart} > Update Your Bio  </p>
+            <Button onClick={this.updateStart} > Update Your Bio  </Button>
         </div>
     }
     ///////////////////////////////////////// ARTICLE CONDITIONAL RENDERING ////////////////////////////////////
@@ -134,6 +144,7 @@ render(){
                 </header>
             </section>
             <div className="userProfileInternalBox">
+            <br /> 
                 <div className='profilePic'>
                     {(this.props.user.image && (
                         <img src={this.props.user.image} alt='user' />)) || (
@@ -141,7 +152,7 @@ render(){
                 )}
                 </div>
                 <h4 className="userProfileHeader">Hello {this.props.user.name}, Looking Good </h4>
-                        {updateBox}
+                            {updateBox}
                     <Col>
                         <br /> 
                             {articles}

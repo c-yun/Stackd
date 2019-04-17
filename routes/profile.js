@@ -39,43 +39,19 @@ router.get("/:userId/articles", (req, res) => {
       })
 })
 
-// router.put("/:userId/edit", (req, res) => {
-   //    console.log("hiting update route");
-   //    let update = req.body
-   //    User.findByIdAndUpdate(req.params.userId, function(err, user){
-      //       $
-      //    })
-      // })
-      
 // UPDATE 
-router.put("/:userId/edit", (req, res) => {
-   console.log("UPDATE ROUTE STARTED");
-   let bio = req.bio;
-   User.findByIdAndUpdate(req.params.id, {
-      $set: bio
-   }, {new: true}, (err, user) => {
+router.put("/:userId", (req, res) => {
+   console.log("UPDATE ROUTE STARTED BACKEND!!!!!");
+   User.findByIdAndUpdate(req.params.userId, 
+      {$set: {bio: req.body.bio}}, 
+      {new: true}, (err, user) => {
       err ? res.send(err) : 
-      user.save(() => {
-         console.log(user);
-         res.json(user)
+         user.save(() => {
+            console.log(user);
+            res.json(user)
       })
    })
 })
-
-
-// router.put('/:id', (req, res) => {
-// 	let updates = req.body;
-// 	Garden.findByIdAndUpdate(req.params.id, {
-// 		$set: updates
-// 	}, {new: true}, (err, garden) => {
-// 		err ? res.send(err) :
-// 		garden.save( () => {
-// 			console.log(garden);
-// 			res.json(garden)
-// 		})
-// 	})
-// })
-
 
 
 
@@ -94,6 +70,32 @@ router.delete("/:userId/articles/:id", (req, res) => {
       });
    });
 });
+
+
+
+// router.put("/:userId/edit", (req, res) => {
+//    console.log("this is the backend route")
+//    User.findByIdAndUpdate(
+//       req.params.userId,
+//       {
+//          bio:req.body.bio,
+//       }, 
+//       {new: true},
+//       (err, profile) => {
+//          if(err){
+//             return res.status(500).send(err);
+//          } else {
+//             return res.status(203).json(profile)
+//          }
+//       }
+//    )
+// })
+
+
+
+
+
+
 
 
 module.exports = router; 
