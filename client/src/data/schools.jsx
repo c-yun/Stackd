@@ -1,11 +1,11 @@
 
 export const schools = [
 {
-    campus: 'GA',
+    campus: 'General Assembly',
     cost: 'Cost: $13,950 - $14,950',
     len: 'Duration: 3 month Intensive or 6 month Progressive',
     loc: 'Locations: Atlanta, Austin, Boston, Chicago, Dallas, Denver, Los Angeles, New York City, Providence, San Diego, San Francisco, Seattle, Stamford, Toronto, Washington DC',
-    img: 'https://ga-core.s3.amazonaws.com/cms/files/files/000/000/886/original/ga-logo-gear.png',
+    img: 'http://designforamerica.com/wp-content/uploads/2015/03/General-Assembly.png',
     url: 'https://generalassemb.ly/'
 },
 {
@@ -13,7 +13,7 @@ export const schools = [
     cost: 'Cost: $10,495 - $14,995',
     len: 'Duration: 14 weeks',
     loc: 'Locations: Chicago, Seattle, Silicon Valley, Los Angeles, Berkeley, Dallas, Tysons Corner, Tulsa, Boise',
-    img: 'https://cdn2.codingdojo.com/images/global/coding_dojo_logo_white.png',
+    img: 'https://image4.owler.com/logo/coding-dojo_owler_20161201_092020_original.png',
     url: 'https://www.codingdojo.com/'
 },
 {
@@ -21,7 +21,7 @@ export const schools = [
     cost: 'Cost: $15,000',
     len: 'Duration: 14 weeks',
     loc: 'Locations: New York, Houston, Atlanta, Seattle, Washington DC',
-    img: 'https://upload.wikimedia.org/wikipedia/commons/6/61/FS_wiki.png',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/FS_wiki.png/250px-FS_wiki.png',
     url: 'https://flatironschool.com/'
 },
 {
@@ -53,7 +53,7 @@ export const schools = [
     cost: 'Cost: $10,900 - $11,900',
     len: 'Duration: 13 weeks',
     loc: 'Locations: Provo, Phoenix, Dallas',
-    img: '',
+    img: 'https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/820/s200/dev-mountain-logo.png',
     url: 'https://devmountain.com/'
 },
 {
@@ -61,7 +61,7 @@ export const schools = [
     cost: 'Cost: $16,895',
     len: 'Duration: 12 weeks',
     loc: 'Locations: San Francisco, Oakland, San Jose',
-    img: '',
+    img: 'https://hackbrightacademy.com/content/uploads/2017/09/signature-logo.png',
     url: 'https://hackbrightacademy.com/'
 },
 {
@@ -69,7 +69,7 @@ export const schools = [
     cost: 'Cost: $11,000 - $12,495',
     len: 'Duration: 10 weeks',
     loc: 'Locations: Boston, Chicago, Dallas, Washington DC',
-    img: '',
+    img: 'https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/3182/s300/ct-logo.png',
     url: 'https://codingtemple.com/'
 },
 {
@@ -77,7 +77,7 @@ export const schools = [
     cost: 'Cost: $10,000 - $13,750',
     len: 'Duration: 10 weeks',
     loc: 'Locations: Boston, Chicago, Dallas, Washington DC',
-    img: '',
+    img: 'http://www.learninghouse.com/wp-content/uploads/2017/09/TSGLogoVert-300x137.png',
     url: 'https://www.thesoftwareguild.com/'
 }
 

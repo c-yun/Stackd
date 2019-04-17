@@ -188,6 +188,21 @@ a {
   font-size: 5em;
 }
 
+.schoolCard {
+  overflow: hidden;
+  align-items: center;
+}
+
+.schoolCard .img {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+  position: absolute;
+}
+
 /* /////////////////////////////////// TRENDING /////////////////////// */
 
 .trendingBox{
