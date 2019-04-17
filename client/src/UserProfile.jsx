@@ -79,6 +79,21 @@ render(){
     //         </>
 
 
+    let articles; 
+    if (this.state.articles.length){
+        articles = this.state.articles.map((article, index) => (
+            <div key={index} className="savedArticles" >
+            <Card onClick={() => this.selectArticle(article)}>  
+                    <h2>{article.title}</h2>
+                    <footer className="blockquote-footer"> {article.author} </footer>
+                    <p><a href={article.url}> Link To Article </a></p>
+                <Button className="removeBtn" variant="secondary" onClick={ () => this.removeArticle(article._id) }> Remove Article </Button>
+            </Card>
+            </div>
+        ))
+    } else {
+        articles = <h1> No Saved Articles</h1>
+    }
     return (
         <div className='UserProfile'>
             <section>
@@ -94,8 +109,11 @@ render(){
                 )}
                 </div>
                 <h4 className="userProfileHeader">Hello, {this.props.user.name}</h4>
+                <h4 className="userProfileHeader">Looking Good, {this.props.user.name}</h4>
                     <Col>
-                        {articles}
+                        <br /> 
+                            {articles}
+                        <br /> 
                     </Col>
                 <Button variant="info"><a onClick={this.props.logout}>Log Out!</a></Button>
             </div>

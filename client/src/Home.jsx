@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // require('dotenv').config();
-import {Card, Button, Row, Col, Jumbotron, Container, CardGroup, CardDeck, Image , Media} from "react-bootstrap"
+import {Card, Button, Row, Col, Jumbotron, Container, CardGroup, CardDeck, Image , Alert} from "react-bootstrap"
 import axios from 'axios';
 import Vid from "./Images&Video/stacdVideo.mp4"
 import { faBookmark, faStar} from '@fortawesome/free-solid-svg-icons';
@@ -12,6 +12,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faBookmark, faStar)
+function simulateNetworkRequest() {
+   return new Promise(resolve => setTimeout(resolve, 2000));
+}
 
 
 class Home extends Component {
@@ -19,10 +22,11 @@ constructor(props){
    super(props)
    this.state = {
       newsApi: [],
-      iconSelected: true,
-      otherIcon: false, 
+      savedBookmark: true, 
+      isLoading: false,
    }
    this.addToProfile = this.addToProfile.bind(this)
+   this.handleClick = this.handleClick.bind(this);
    // this.postAdd = this.postAdd.bind(this);
 }
 
@@ -36,6 +40,16 @@ componentDidMount(){
       })
    }).catch( err => console.log(err))
 }
+
+handleClick() {
+   this.setState({ isLoading: true }, () => {
+     simulateNetworkRequest().then(() => {
+       this.setState({ isLoading: false });
+     });
+   });
+   }
+
+
 
 postAdd = (object) => {
    console.log("hiting axios post route FRONTEND")
@@ -54,6 +68,7 @@ postAdd = (object) => {
    });
 }
 addToProfile = (article) => {
+   console.log("Added to profile")
 let postObject ={
    title: article.title,
    author: article.author,
@@ -63,37 +78,34 @@ let postObject ={
 this.postAdd(postObject);
 }
 
-iconBookmarkReady = (e) => {
+iconBookmarkPicked = (e) => {
    this.setState({
-      iconSelected: false,
+      savedBookmark: false,
    })
 }
 
-iconBookmarkResting = (e) => {
-   this.setState({
-      iconSelected: true,
-   })
-}
 
 render(){
+   const { isLoading } = this.state;
    let bookmarkIcon;
-   if(this.state.iconSelected === true) {
-      console.log("STAR")
-      bookmarkIcon=(
-         <FontAwesomeIcon onClick={this.iconBookmarkReady} className="fontAwe" size="4x" icon={["fa", "star"]}/>
+   if(this.state.savedBookmark === false) {
+      console.log("bookmark selected")
+      return(
+            <div>  
+               <Alert variant="success">
+               <Alert.Heading>Hey, nice to see you</Alert.Heading>
+            </Alert>
+         </div>
       )
       } else {
-         console.log("BOOKMARK")
-         bookmarkIcon=(
-            <FontAwesomeIcon onClick={this.iconBookmarkResting} className="fontAwe" size="4x" icon={['fa', 'bookmark']}/>
-         )
+         console.log("nothing bookmarked")
          
       }
    const news = this.state.news ?
    this.state.news.map((article, index) => (
       <div key={index} className="cardBox">
       <Col>
-         <Card style={{width:"20em"}}>
+         <Card style={{width:"22em"}}>
             <Card.Img variant="top" src={article.urlToImage} />
                <Card.Body className="cardBody">
                   <h3> {article.title}</h3>
@@ -108,7 +120,9 @@ render(){
                   <Card.Link href={article.url}><Button>Article</Button></Card.Link>
                      </Col>
                      <Col>
-                  <Button onClick={() => this.addToProfile(article)}> bookmark</Button>
+                     <div onClick={() => this.addToProfile(article)} className="bookmark">
+                     <Button variant="primary" disabled={isLoading} onClick={!isLoading ? this.handleClick : null}> {isLoading ? 'Saved!' : 'Click to Save'} </Button>
+                     </div>
                      </Col>
                   </Row>
                </Card.Body>
@@ -120,7 +134,7 @@ render(){
    return(
       <div className="homeBox">
          <Jumbotron fluid>
-            <video className="video-background" preload="true" muted="true" autoplay="true" loop="true"> 
+            <video className="video-background" preload="true" muted={true} autoPlay={true} loop={true}> 
                <source src={Vid} type="video/mp4" />
             </video> 
          </Jumbotron> 
@@ -132,7 +146,7 @@ render(){
    <div className="newsBox">
       <Row>
          {news}
-         <h1> Hello stuf here </h1>
+         {/* <h1> Hello stuf here </h1> */}
       </Row>
    </div>
 </div>
