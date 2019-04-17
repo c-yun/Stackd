@@ -14,8 +14,12 @@ constructor(props){
     this.state = {
         articles: [],
         currentArticle: null,
+        updateStart: false,
+        
     }
     this.selectArticle = this.selectArticle.bind(this); 
+    this.updateStart = this.updateStart.bind(this);
+    this.updateBio = this.updateBio.bind(this);
 }
 
 componentDidMount() {
@@ -31,6 +35,26 @@ filter = (id) =>{
     console.log(id)
     return this.state.articles.filter((article)=> article._id !== id);
 }
+
+// added bio 
+updateBio = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    console.log(`hiting the update route, AXIOS. PUT. ON USERPROFILE FRONTEND ${this.props.user._id}`)
+    axios.put(`/profile/${this.props.user._id}/edit`)
+      .then(response => {
+        console.log(response, "update Bio consoleLog")
+        // props.updateUser();
+      })
+    // props.history.push(`/profile/${this.props.user._id}`)
+  }
+
+updateStart = (e) =>{
+    console.log("update conditional rendering")
+    this.setState({
+        updateStart: true,
+    })
+} 
 
 
 removeArticle = (id) => {
@@ -68,17 +92,24 @@ render(){
         </div>
     ))
 
-    // if (props.user) {
-        
-    //         <>
-    //             <div className='profile-img'>
-    //                 {(props.user.image && (
-    //                     <img src={props.user.image} alt='user' /> )) || (<img src='http://placekitten.com/g/200/200' alt='placeholder' />
-    //         )}
-    //         </div>
-    //         </>
-
-
+    ////////////////////////////////////////// BIO UPDATE  //////////////////////////////////////////
+    let updateBox;
+    if(this.state.updateStart === true){
+        updateBox = 
+            <div className="updateForm" >
+                <form>
+                <input onChange={this.updateBio} value={this.state.bio} type='bio' name='bio' placeholder="looking good 😀" /><br />
+                <input  type='submit' value='Update!' />
+                </form>
+            </div>
+    } else {
+        updateBox = 
+        <div className="yourBio">
+            <p> About Me: {this.props.user.bio} </p>
+            <p onClick={this.updateStart} > Update Your Bio  </p>
+        </div>
+    }
+    ///////////////////////////////////////// ARTICLE CONDITIONAL RENDERING ////////////////////////////////////
     if (this.state.articles.length){
         articles = this.state.articles.map((article, index) => (
             <div key={index} className="savedArticles" >
@@ -93,6 +124,7 @@ render(){
     } else {
         articles = <h1> No Saved Articles</h1>
     }
+    ///////////////////////////////////////////// RETURN ////////////////////////////////////////////////////////////
     return (
         <div className='UserProfile'>
             <section>
@@ -107,8 +139,8 @@ render(){
                     )) || (<img src='https://i.imgur.com/UDo14lr.png' alt='placeholder' />
                 )}
                 </div>
-                <h4 className="userProfileHeader">Hello, {this.props.user.name}</h4>
-                <h4 className="userProfileHeader">Looking Good, {this.props.user.name}</h4>
+                <h4 className="userProfileHeader">Hello {this.props.user.name}, Looking Good </h4>
+                        {updateBox}
                     <Col>
                         <br /> 
                             {articles}
