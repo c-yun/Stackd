@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import axios from "axios"
 import { Button, Card, Col } from 'react-bootstrap';
+import {Link} from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faUserAstronaut} from "@fortawesome/free-solid-svg-icons";
+import { library } from '@fortawesome/fontawesome-svg-core';
 
+library.add(faUserAstronaut)
 
 class UserProfile extends Component {
 constructor(props){
@@ -51,6 +56,29 @@ selectArticle = (article) => {
 }
 
 render(){
+    let selectArticle; 
+    let articles = this.state.articles.map((article, index) => (
+        <div key={index} className="savedArticles" >
+        <Card onClick={() => this.selectArticle(article)}>  
+                <h2>{article.title}</h2>
+                <footer className="blockquote-footer"> {article.author} </footer>
+                <p><a href={article.url}> Link To Article </a></p>
+            <Button className="removeBtn" variant="secondary" onClick={ () => this.removeArticle(article._id) }> Remove Article </Button>
+        </Card>
+        </div>
+    ))
+
+    // if (props.user) {
+        
+    //         <>
+    //             <div className='profile-img'>
+    //                 {(props.user.image && (
+    //                     <img src={props.user.image} alt='user' /> )) || (<img src='http://placekitten.com/g/200/200' alt='placeholder' />
+    //         )}
+    //         </div>
+    //         </>
+
+
     let articles; 
     if (this.state.articles.length){
         articles = this.state.articles.map((article, index) => (
@@ -68,7 +96,19 @@ render(){
     }
     return (
         <div className='UserProfile'>
+            <section>
+                <header>
+                    {this.props.user && (<Link to='/profile/update'></Link>)}
+                </header>
+            </section>
             <div className="userProfileInternalBox">
+                <div className='profilePic'>
+                    {(this.props.user.image && (
+                    <img src={this.props.user.image} alt='user' />
+                    )) || (<img src='https://i.imgur.com/UDo14lr.png' alt='placeholder' />
+                )}
+                </div>
+                <h4 className="userProfileHeader">Hello, {this.props.user.name}</h4>
                 <h4 className="userProfileHeader">Looking Good, {this.props.user.name}</h4>
                     <Col>
                         <br /> 
