@@ -58,7 +58,9 @@ class Signup extends Component {
     render() {
         return (
             <div className='Signup'>
-                <h3>Create a new account:</h3>
+                <h1 className="headerSignUp">Stackd </h1>
+                    <p> Connecting You To The Latest Tech Trends </p>
+                <h3 className="headerSignUp">Create a new account:</h3>
                 <form onSubmit={this.handleSubmit}>
                     <input onChange={this.handleNameChange} value={this.state.name} type='text' name='name' placeholder='First And Last Name..' /><br />
                     <input onChange={this.handleEmailChange} value={this.state.email} type='email' name='email' placeholder='Your email...' /><br />

@@ -51,7 +51,9 @@ class Login extends Component {
     render() {
         return (
             <div className='Login'>
-                <h3>Log into your account:</h3>
+                <h1 className="headerLogin"> Stackd </h1>
+                    <p> Connecting You To The Latest Tech Trends </p>
+                <h3 className="headerLogin">Log into your account:</h3>
                 <form onSubmit={this.handleSubmit}>
                 <input onChange={this.handleEmailChange} value={this.state.email} type='email' name='email' placeholder='Enter your email...' /><br />
                 <input onChange={this.handlePasswordChange} value={this.state.password} type='password' name='password' placeholder='Enter your password...' /><br />
