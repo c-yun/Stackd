@@ -23,7 +23,7 @@ const School = (props) => {
    ))
    return(
       <div className="schoolBox">
-         <h1 className="schoolHeader"> Coding Bootcamp Comparison </h1>
+         <h1 className="schoolHeader"> Bootcamp Comparison </h1>
             <div className="devSchoolBox">
                {devSchool}
             </div>
