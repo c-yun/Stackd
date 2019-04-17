@@ -91,6 +91,7 @@ render(){
         </Card>
         </div>
     ))
+
     ////////////////////////////////////////// BIO UPDATE  //////////////////////////////////////////
     let updateBox;
     if(this.state.updateStart === true){

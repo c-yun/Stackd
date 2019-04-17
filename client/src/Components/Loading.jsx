@@ -1,5 +1,4 @@
 import React from 'react';
-// import {ReactComponent as Loader} from '../
 
 const Loading = (props) => {
     return (
