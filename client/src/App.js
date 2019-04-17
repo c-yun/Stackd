@@ -196,6 +196,7 @@ signUpClick = (e) =>{
             <Route path="/" exact render={() => <Home Home={Home} user={this.state.user} /> }/> 
             <Route path="/library" exact render={() => <Library Library={Library} />} /> 
             <Route path={`/profile/${this.state.user._id}`} exact render={() => ( <UserProfile user={this.state.user} logout={this.logout} /> )} />
+            <Route path={`/profile/${this.state.user._id}/edit`} exact render={() => (<UserProfile user={this.state.user} /> )} />  
             <Route path="/trending" exact render={() => <Trending Trending={Trending} /> }/>  
             <Route path="/school" exact render={() => <School bootcamp={this.state.bootcamp} /> } /> 
         </div>
