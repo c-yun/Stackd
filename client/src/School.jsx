@@ -8,7 +8,7 @@ const School = (props) => {
       <Card>
          <Card.Img variant="top" src="" />
          <Card.Body>
-         <h1>{devs.campus}</h1>
+         {/* <h1>{devs.campus}</h1> */}
          <img src={devs.img} />
             <Card.Text>
                <h6>{devs.cost}</h6>
@@ -23,7 +23,7 @@ const School = (props) => {
    ))
    return(
       <div className="schoolBox">
-         <h1 className="schoolHeader"> Coding Bootcamp Comparison </h1>
+         <h1 className="schoolHeader"> Bootcamp Comparison </h1>
             <div className="devSchoolBox">
                {devSchool}
             </div>
