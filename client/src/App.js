@@ -136,8 +136,8 @@ signUpClick = (e) =>{
         <>
       <div className='logboxContainer'>
         <div className='logboxLoginDiv'>
-          <Button variant="info" className='signloginBtn' onClick={this.loginClick}> {' '} Login{' '} </Button>
-          <Button variant="info" className='signloginBtn' onClick={this.signUpClick}> {' '} Register{' '} </Button>
+          <Button variant="info" className="loginBtn" onClick={this.loginClick}> {' '} Login{' '} </Button>
+          <Button variant="info" className="loginBtn" onClick={this.signUpClick}> {' '} Register{' '} </Button>
         </div>
         <Login className='liftStateLogin' liftTokenToState={this.liftTokenToState} />
       </div>
@@ -210,8 +210,9 @@ signUpClick = (e) =>{
     );
   }
 }
+
 function loadingScreen() {
-  return new Promise((resolve) => setTimeout(() => resolve(), 500));
+  return new Promise((resolve) => setTimeout(() => resolve(), 200));
 }
 
 

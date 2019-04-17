@@ -12,6 +12,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faBookmark, faStar)
+function simulateNetworkRequest() {
+   return new Promise(resolve => setTimeout(resolve, 2000));
+}
 
 
 class Home extends Component {
@@ -20,8 +23,10 @@ constructor(props){
    this.state = {
       newsApi: [],
       savedBookmark: true, 
+      isLoading: false,
    }
    this.addToProfile = this.addToProfile.bind(this)
+   this.handleClick = this.handleClick.bind(this);
    // this.postAdd = this.postAdd.bind(this);
 }
 
@@ -35,6 +40,16 @@ componentDidMount(){
       })
    }).catch( err => console.log(err))
 }
+
+handleClick() {
+   this.setState({ isLoading: true }, () => {
+     simulateNetworkRequest().then(() => {
+       this.setState({ isLoading: false });
+     });
+   });
+   }
+
+
 
 postAdd = (object) => {
    console.log("hiting axios post route FRONTEND")
@@ -71,6 +86,7 @@ iconBookmarkPicked = (e) => {
 
 
 render(){
+   const { isLoading } = this.state;
    let bookmarkIcon;
    if(this.state.savedBookmark === false) {
       console.log("bookmark selected")
@@ -104,8 +120,8 @@ render(){
                   <Card.Link href={article.url}><Button>Article</Button></Card.Link>
                      </Col>
                      <Col>
-                     <div onClick={() => this.iconBookmarkPicked }className="bookmark">
-                     <Button onClick={() => this.addToProfile(article)}> bookmark </Button>
+                     <div onClick={() => this.addToProfile(article)} className="bookmark">
+                     <Button variant="primary" disabled={isLoading} onClick={!isLoading ? this.handleClick : null}> {isLoading ? 'Saved!' : 'Click to Save'} </Button>
                      </div>
                      </Col>
                   </Row>
