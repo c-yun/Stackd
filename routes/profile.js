@@ -39,15 +39,15 @@ router.get("/:userId/articles", (req, res) => {
       })
 })
 
-// UPDATE 
 // router.put("/:userId/edit", (req, res) => {
-//    console.log("hiting update route");
-//    let update = req.body
-//    User.findByIdAndUpdate(req.params.userId, function(err, user){
-//       $
-//    })
-// })
-
+   //    console.log("hiting update route");
+   //    let update = req.body
+   //    User.findByIdAndUpdate(req.params.userId, function(err, user){
+      //       $
+      //    })
+      // })
+      
+// UPDATE 
 router.put("/:userId/edit", (req, res) => {
    console.log("UPDATE ROUTE STARTED");
    let bio = req.bio;
