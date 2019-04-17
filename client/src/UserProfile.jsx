@@ -96,8 +96,8 @@ render(){
                     )) || (<img src='https://i.imgur.com/UDo14lr.png' alt='placeholder' />
                 )}
                 </div>
-                <h4 className="userProfileHeader">Hello, {this.props.user.name}</h4>
-                <h4 className="userProfileHeader">Looking Good, {this.props.user.name}</h4>
+                <h4 className="userProfileHeader">Hello {this.props.user.name}, Looking Good </h4>
+                <p> About Me: {this.props.user.bio} </p>
                     <Col>
                         <br /> 
                             {articles}

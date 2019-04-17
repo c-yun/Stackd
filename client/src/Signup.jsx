@@ -7,11 +7,16 @@ class Signup extends Component {
         this.state = {
             name: '',
             email: '',
-            password: ''
+            password: '',
+            bio:'',
+            // bio added here
+
         }
         this.handleNameChange = this.handleNameChange.bind(this)
         this.handleEmailChange = this.handleEmailChange.bind(this)
         this.handlePasswordChange = this.handlePasswordChange.bind(this)
+        this.handleBioChange = this.handleBioChange.bind(this)
+            // bio added here
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
@@ -33,12 +38,21 @@ class Signup extends Component {
         })
     }
 
+    handleBioChange(e) {
+        this.setState({
+            bio: e.target.value
+            // bio added here
+        })
+    }
+
     handleSubmit(e) {
         e.preventDefault()
         axios.post('/auth/signup', {
             name: this.state.name,
             email: this.state.email,
-            password: this.state.password
+            password: this.state.password,
+            bio: this.state.bio
+            // bio added here
         }).then(res => {
             console.log("we are getting data SIGNUP", res.data )
             if (res.data.type === 'error') {
@@ -65,6 +79,8 @@ class Signup extends Component {
                     <input onChange={this.handleNameChange} value={this.state.name} type='text' name='name' placeholder='First And Last Name..' /><br />
                     <input onChange={this.handleEmailChange} value={this.state.email} type='email' name='email' placeholder='Your email...' /><br />
                     <input onChange={this.handlePasswordChange} value={this.state.password} type='password' name='password' placeholder='Choose a password...' /><br />
+                    <input onChange={this.handleBioChange} value={this.state.bio} type='bio' name='bio' placeholder='About Me...' /><br />
+                    {/* // bio added here  */}
                     <input type='submit' value='Sign Up!' />
                 </form>
             </div>

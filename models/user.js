@@ -22,6 +22,11 @@ const userSchema = new Schema({
         minlength: [5, 'Email must be between 5 and 99 characters'],
         maxlength: [99, 'Email must be between 5 and 99 characters']
     },
+    bio: {
+        type: String,
+        required: [true, 'Tell Us Something About Yourself'],
+         // bio added here
+    },
     articles: [{ type: Schema.Types.ObjectId, ref: 'Article' }],
 });
 
@@ -32,6 +37,8 @@ userSchema.set('toObject', {
             _id: ret._id,
             email: ret.email,
             name: ret.name,
+            bio: ret.bio,
+             // bio added here
             articles: ret.articles
         }
         return returnJson;
