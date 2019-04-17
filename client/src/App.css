@@ -296,17 +296,21 @@ a {
 .logBox{
   width: 100%;
   height: 100%;
-  border: 3px dashed red;
+  /* border: 3px dashed red; */
   margin: 0 auto;
+  top: 100%; 
 }
 .logboxLoginDiv{
   margin: 0 auto;
-  border: 4px solid orange;
+  /* border: 4px solid orange; */
+  top: 4em;
 }
+
+
 .signloginBtn{
   width: 50%;
   height: 100%;
-  border: 3px solid palegreen;
+  /* border: 3px solid palegreen; */
 }
 
 .headerLogin{
@@ -331,6 +335,13 @@ a {
   font-size: 2em;
 }
 
+.logboxHeader{
+}
+
+.ifLogbox{
+  /* border: 3px solid green; */
+}
+
 /* /* /////////////////////////////// Login //////////////////////////////  */
 .Login{
   font-family: 'Cute Font';
@@ -340,11 +351,18 @@ a {
   /* background-image: url("https://images.unsplash.com/photo-1469366379702-59bb9f45c11e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2134&q=80"); */
   background-size: cover;
   background-position: center;
-  border: 3px solid green;
+  /* border: 3px solid green; */
 }
 
 .logoImageBox{
-  border: 4px solid purple;
-  width: 100%;
+  /* border: 4px solid purple; */
+  /* width: 100%;
+  height: 100vh; */
+}
+
+/* /* /////////////////////////////// SIGNUP //////////////////////////////  */
+.formSignup{
+  /* border: 1px solid black ; */
+  width: 100vw;
   height: 100vh;
 }

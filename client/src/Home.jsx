@@ -24,6 +24,7 @@ constructor(props){
       newsApi: [],
       savedBookmark: true, 
       isLoading: false,
+      coin: [],
    }
    this.addToProfile = this.addToProfile.bind(this)
    this.handleClick = this.handleClick.bind(this);

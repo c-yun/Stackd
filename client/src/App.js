@@ -136,17 +136,15 @@ signUpClick = (e) =>{
     let logger; 
     if(this.state.loginSelected === true){
       logbox = (
-        <>
+        <div className="ifLogbox">
+      <br /> 
       <div className='logboxContainer'>
-        <div className='logboxLoginDiv'>
-          <Button variant="primary" className="loginBtn" onClick={this.loginClick}> {' '} Login{' '} </Button>
-          
-          <Button variant="primary" className="loginBtn" onClick={this.signUpClick}> {' '} Register{' '} </Button>
-        </div>
-        <Login className='liftStateLogin' liftTokenToState={this.liftTokenToState} />
+          <h4 variant="primary" className="loginBtn" onClick={this.loginClick}> {' '} Login{' '} </h4>
+          <h4 variant="primary" className="loginBtn" onClick={this.signUpClick}> {' '} Register{' '} </h4>
+            <Login className='liftStateLogin' liftTokenToState={this.liftTokenToState} />
       </div> 
-      {/* <br />  */}
-    </>
+      <br /> 
+    </div>
       )
     } else {
       logbox = (
@@ -207,7 +205,9 @@ signUpClick = (e) =>{
       </BrowserRouter> 
       )
     } else {
-      contents = <div className='logBox'>{logbox}</div>
+      contents = <div className='logBox'>
+        {logbox}
+      </div>
     }
     return (
       <div className="App">
