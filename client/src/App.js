@@ -14,6 +14,7 @@ import {Card, Button, Row, Col, Jumbotron, Container, Nav, Navbar} from "react-b
 
 import Header from './Components/Header';
 import Footer from "./Components/Footer"
+import Loading from './Components/Loading';
 
 
 
@@ -126,7 +127,8 @@ signUpClick = (e) =>{
   render() {
     const {loading} = this.state
     if (loading) {
-      return null;
+      return <Loading />;
+
     }
     // let contents;
     let logbox;
