@@ -15,6 +15,7 @@ class Library extends Component {
             <br />
             <div className='languages'>
                <h2>Programming Languages</h2>
+               <br />
             <Row>
                <Col>
                <a href='https://reactjs.org/'><FontAwesomeIcon className='fontLib' size='10x' icon={['fab', 'react']} /></a> <h3>React</h3>
@@ -33,6 +34,7 @@ class Library extends Component {
             <br />
             <div className='media'>
                <h2>Media and Tools</h2>
+               <br />
             <Row>
                <Col>
                <a href='https://github.com/'><FontAwesomeIcon className='fontLib' size='10x' icon={['fab', 'github']} /></a> <h3>Github</h3>
@@ -47,6 +49,7 @@ class Library extends Component {
                <a href='https://twitter.com/'><FontAwesomeIcon className='fontLib' size='10x' icon={['fab', 'twitter']} /></a> <h3>Twitter</h3>
                </Col>          
             </Row>
+            <br />
             <Row>
                <Col>
                <a href='https://stackoverflow.com/'><FontAwesomeIcon className='fontLib' size='10x' icon={['fab', 'stack-overflow']} /></a> <h3>Stack Overflow</h3>

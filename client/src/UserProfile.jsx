@@ -3,10 +3,10 @@ import axios from "axios"
 import { Button, Card, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faUserAstronaut} from "@fortawesome/free-solid-svg-icons";
+// import {faUserAstronaut} from "@fortawesome/free-solid-svg-icons";
 import { library } from '@fortawesome/fontawesome-svg-core';
 
-library.add(faUserAstronaut)
+// library.add(faUserAstronaut)
 
 class UserProfile extends Component {
 constructor(props){
@@ -92,6 +92,7 @@ render(){
         </div>
     ))
 
+
     ////////////////////////////////////////// BIO UPDATE  //////////////////////////////////////////
     let updateBox;
     if(this.state.updateStart === true){
@@ -135,8 +136,8 @@ render(){
             <div className="userProfileInternalBox">
                 <div className='profilePic'>
                     {(this.props.user.image && (
-                    <img src={this.props.user.image} alt='user' />
-                    )) || (<img src='https://i.imgur.com/UDo14lr.png' alt='placeholder' />
+                        <img src={this.props.user.image} alt='user' />)) || (
+                        <img src='https://i.imgur.com/UDo14lr.png' alt='placeholder' />
                 )}
                 </div>
                 <h4 className="userProfileHeader">Hello {this.props.user.name}, Looking Good </h4>

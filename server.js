@@ -10,6 +10,7 @@ const multer = require('multer');
 const upload = multer({dest: './uploads/'});
 const cloudinaryStorage = require('multer-storage-cloudinary');
 const cloudinary = require('cloudinary');
+const User = require('./models/user');
 
 const app = express();
 
@@ -79,7 +80,7 @@ app.post('/UpdateProfile', parser.single('myPic'), (req,res) => {
         },
         {new: true},
         (err, user) => {
-            if (err)
+            if (err) console.log('ERROR', err);
             user.save(() => {
                 res.redirect('profile/update');
             });
