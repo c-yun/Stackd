@@ -3,10 +3,10 @@ import axios from "axios"
 import { Button, Card, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faUserAstronaut} from "@fortawesome/free-solid-svg-icons";
+// import {faUserAstronaut} from "@fortawesome/free-solid-svg-icons";
 import { library } from '@fortawesome/fontawesome-svg-core';
 
-library.add(faUserAstronaut)
+// library.add(faUserAstronaut)
 
 class UserProfile extends Component {
 constructor(props){

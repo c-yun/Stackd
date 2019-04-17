@@ -10,6 +10,7 @@ const multer = require('multer');
 const upload = multer({dest: './uploads/'});
 const cloudinaryStorage = require('multer-storage-cloudinary');
 const cloudinary = require('cloudinary');
+const User = require('./models/user');
 
 const app = express();
 
@@ -75,7 +76,7 @@ app.post('/UpdateProfile', parser.single('myPic'), (req,res) => {
     User.findByIdAndUpdate(
         req.body.userId,
         {
-            $set: {image: req.file.secure_url}
+            where: {image: req.file.secure_url}
         },
         {new: true},
         (err, user) => {
