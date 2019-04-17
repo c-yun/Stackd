@@ -40,23 +40,41 @@ router.get("/:userId/articles", (req, res) => {
 })
 
 // UPDATE 
-router.put("/:userId/edit", (req, res) => {
+router.put("/:userId", (req, res) => {
    console.log("UPDATE ROUTE STARTED BACKEND!!!!!");
-   let bio = req.bio;
-   console.log(req.bio)
-   User.findByIdAndUpdate(req.params.id, {
-      $set: bio
-   }, {new: true}, (err, user) => {
+   User.findByIdAndUpdate(req.params.userId, 
+      {$set: {bio: req.body.bio}}, 
+      {new: true}, (err, user) => {
       err ? res.send(err) : 
-      user.save(() => {
-         console.log(user);
-         res.json(user)
+         user.save(() => {
+            console.log(user);
+            res.json(user)
       })
    })
 })
 
+
+
+// DELETE
+router.delete("/:userId/articles/:id", (req, res) => {
+   console.log("start of delete rout");
+   Article.findOneAndDelete({_id: req.params.id}, (err, article) =>{
+      User.findById(req.params.userId, (err, user) => {
+         if(err){
+            throw err;
+         } else {
+            console.log("working")
+            user.update({ $pull: {articles: {_id: req.params.id} } })
+            res.status(200).json({ message: "delete complete. article was deleted" })
+         };
+      });
+   });
+});
+
+
+
 // router.put("/:userId/edit", (req, res) => {
-//    console.log("this is the backend route", req)
+//    console.log("this is the backend route")
 //    User.findByIdAndUpdate(
 //       req.params.userId,
 //       {
@@ -78,21 +96,6 @@ router.put("/:userId/edit", (req, res) => {
 
 
 
-// DELETE
-router.delete("/:userId/articles/:id", (req, res) => {
-   console.log("start of delete rout");
-   Article.findOneAndDelete({_id: req.params.id}, (err, article) =>{
-      User.findById(req.params.userId, (err, user) => {
-         if(err){
-            throw err;
-         } else {
-            console.log("working")
-            user.update({ $pull: {articles: {_id: req.params.id} } })
-            res.status(200).json({ message: "delete complete. article was deleted" })
-         };
-      });
-   });
-});
 
 
 module.exports = router; 

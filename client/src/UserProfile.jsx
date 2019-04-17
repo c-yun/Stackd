@@ -15,8 +15,7 @@ constructor(props){
         articles: [],
         currentArticle: null,
         updateStart: false,
-        
-        
+        bio: '', 
     }
     this.selectArticle = this.selectArticle.bind(this); 
     this.updateStart = this.updateStart.bind(this);
@@ -41,13 +40,17 @@ filter = (id) =>{
 updateBio = (e) => {
     e.preventDefault()
     e.stopPropagation()
-    console.log(`hiting the update route, AXIOS. PUT. ON USERPROFILE FRONTEND ${this.props.user._id}`)
-    axios.put(`/profile/${this.props.user._id}/edit`)
+    console.log(`hiting the PUT AXIOS ROUTE ON FRONTEND`)
+    axios.put(`/profile/${this.props.user._id}`, {
+        bio: this.state.bio
+    })
       .then(response => {
         console.log(response, "update Bio consoleLog")
-        // props.updateUser();
+        this.setState({updateStart: false}, () => {
+            this.props.checkForLocalToken();
+        })
       })
-    // props.history.push(`/profile/${this.props.user._id}`)
+    // this.state.history.push(`/profile/${this.props.user._id}`)
   }
 
 updateStart = (e) =>{
@@ -56,7 +59,6 @@ updateStart = (e) =>{
         updateStart: true,
     })
 } 
-
 
 removeArticle = (id) => {
     console.log("removing article frontend");
@@ -80,6 +82,12 @@ selectArticle = (article) => {
     })
 }
 
+handleChange = (e) => {
+    this.setState({
+        bio: e.target.value
+    })
+}
+
 render(){
     let selectArticle; 
     let articles = this.state.articles.map((article, index) => (
@@ -93,14 +101,14 @@ render(){
         </div>
     ))
 
-    ////////////////////////////////////////// BIO UPDATE  //////////////////////////////////////////
+    ////////////////////////////////////////// BIO CONDITIONAL RENDERING ///////////////////////////////////////////////////
     let updateBox;
     if(this.state.updateStart === true){
         updateBox = 
             <div className="updateForm" >
-                <form onSubmit={this.updateBio}>
-                <input value={this.state.bio} type='bio' name='bio' placeholder="looking good 😀" /><br />
-                <input  type='submit' value='Update!' />
+                <form  onSubmit={this.updateBio}>
+                    <input value={this.state.bio} type='bio' name='bio' onChange={this.handleChange} placeholder="looking good 😀" /><br />
+                    <input type='submit' value='Update!' />
                 </form>
             </div>
     } else {
