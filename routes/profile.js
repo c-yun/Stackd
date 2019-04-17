@@ -39,17 +39,9 @@ router.get("/:userId/articles", (req, res) => {
       })
 })
 
-// router.put("/:userId/edit", (req, res) => {
-   //    console.log("hiting update route");
-   //    let update = req.body
-   //    User.findByIdAndUpdate(req.params.userId, function(err, user){
-      //       $
-      //    })
-      // })
-      
 // UPDATE 
 router.put("/:userId/edit", (req, res) => {
-   console.log("UPDATE ROUTE STARTED");
+   console.log("UPDATE ROUTE STARTED BACKEND!!!!!");
    let bio = req.bio;
    User.findByIdAndUpdate(req.params.id, {
       $set: bio
@@ -61,23 +53,6 @@ router.put("/:userId/edit", (req, res) => {
       })
    })
 })
-
-
-// router.put('/:id', (req, res) => {
-// 	let updates = req.body;
-// 	Garden.findByIdAndUpdate(req.params.id, {
-// 		$set: updates
-// 	}, {new: true}, (err, garden) => {
-// 		err ? res.send(err) :
-// 		garden.save( () => {
-// 			console.log(garden);
-// 			res.json(garden)
-// 		})
-// 	})
-// })
-
-
-
 
 // DELETE
 router.delete("/:userId/articles/:id", (req, res) => {

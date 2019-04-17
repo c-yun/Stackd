@@ -40,14 +40,13 @@ filter = (id) =>{
 updateBio = (e) => {
     e.preventDefault()
     e.stopPropagation()
-    console.log(`hiting the update route, AXIOS. PUT. ON USERPROFILE FRONTEND ${this.props.user._id}`)
+    console.log(`hiting the updateBio Route✅ ${this.props.user._id}`)
     axios.put(`/profile/${this.props.user._id}/edit`)
-      .then(response => {
-        console.log(response, "update Bio consoleLog")
-        // props.updateUser();
-      })
-    // props.history.push(`/profile/${this.props.user._id}`)
-  }
+        .then(response => {
+            console.log(response, "update Bio consoleLog")
+        })
+}   
+
 
 updateStart = (e) =>{
     console.log("update conditional rendering")
@@ -97,8 +96,8 @@ render(){
     if(this.state.updateStart === true){
         updateBox = 
             <div className="updateForm" >
-                <form>
-                <input onChange={this.updateBio} value={this.state.bio} type='bio' name='bio' placeholder="looking good 😀" /><br />
+                <form onSubmit={this.updateBio}>
+                <input  value={this.state.bio} type='bio' name='bio' placeholder="looking good 😀" /><br />
                 <input  type='submit' value='Update!' />
                 </form>
             </div>
@@ -140,7 +139,7 @@ render(){
                 )}
                 </div>
                 <h4 className="userProfileHeader">Hello {this.props.user.name}, Looking Good </h4>
-                        {updateBox}
+                            {updateBox}
                     <Col>
                         <br /> 
                             {articles}
