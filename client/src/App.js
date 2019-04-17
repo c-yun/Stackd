@@ -138,11 +138,13 @@ signUpClick = (e) =>{
         <>
       <div className='logboxContainer'>
         <div className='logboxLoginDiv'>
-          <Button variant="info" className="loginBtn" onClick={this.loginClick}> {' '} Login{' '} </Button>
-          <Button variant="info" className="loginBtn" onClick={this.signUpClick}> {' '} Register{' '} </Button>
+          <Button variant="primary" className="loginBtn" onClick={this.loginClick}> {' '} Login{' '} </Button>
+          
+          <Button variant="primary" className="loginBtn" onClick={this.signUpClick}> {' '} Register{' '} </Button>
         </div>
         <Login className='liftStateLogin' liftTokenToState={this.liftTokenToState} />
-      </div>
+      </div> 
+      {/* <br />  */}
     </>
       )
     } else {
@@ -150,13 +152,13 @@ signUpClick = (e) =>{
         <>
           <div className='logboxContainer'>
             <div className='logboxLoginDiv'>
-              <Button variant="info"
+              <Button variant="primary"
                 className={`${
                   this.state.loginSelected ? 'loginText' : 'loginTextSelected'
                 }`} onClick={this.loginClick}>
                 Login
               </Button>
-              <Button variant="info"
+              <Button variant="primary"
                 className={`${
                   this.state.loginSelected ? 'signupText' : 'signupTextSelected'
                 }`}

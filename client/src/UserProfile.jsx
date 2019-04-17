@@ -95,7 +95,7 @@ render(){
         <Card onClick={() => this.selectArticle(article)}>  
                 <h2>{article.title}</h2>
                 <footer className="blockquote-footer"> {article.author} </footer>
-                <p><a href={article.url}> Link To Article </a></p>
+                <a href={article.url}> <Button variant="success"> Link To Article </Button></a>
             <Button className="removeBtn" variant="secondary" onClick={ () => this.removeArticle(article._id) }> Remove Article </Button>
         </Card>
         </div>
@@ -115,7 +115,7 @@ render(){
         updateBox = 
         <div className="yourBio">
             <p> About Me: {this.props.user.bio} </p>
-            <p onClick={this.updateStart} > Update Your Bio  </p>
+            <Button onClick={this.updateStart} > Update Your Bio  </Button>
         </div>
     }
     ///////////////////////////////////////// ARTICLE CONDITIONAL RENDERING ////////////////////////////////////
@@ -142,6 +142,7 @@ render(){
                 </header>
             </section>
             <div className="userProfileInternalBox">
+            <br /> 
                 <div className='profilePic'>
                     {(this.props.user.image && (
                     <img src={this.props.user.image} alt='user' />
