@@ -3,7 +3,8 @@ import {AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,} from 'recharts';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faReact, faPython, faJsSquare, faJava } from "@fortawesome/free-brands-svg-icons"
-import { Button, Card, Row, Col } from 'react-bootstrap';
+import { Card, Row, Col } from 'react-bootstrap';
+import Footer from "./Components/Footer"
 
 library.add(faReact, faPython, faJsSquare, faJava)
 
@@ -68,8 +69,6 @@ React = [
    {
      
    name: 'Mar 16', uv: 14.33, pv: 4300, amt: 2100,
-
-      name: 'Mar 16', uv: 0, pv: 4300, amt: 2100,
    }, 
    {
    name: 'Jun 16', uv: 15.12, pv: 4300, amt: 2100,
@@ -458,6 +457,7 @@ Java = [
                      </Col>
                   </Row>
                </div>
+            <Footer /> 
       </div>
       )
    }

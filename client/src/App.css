@@ -43,6 +43,47 @@
   font-size: 2em;
 }
 
+.fontAwe{
+  -webkit-animation: rollinleft 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+	        animation: rollinleft 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+@-webkit-keyframes rollinleft {
+  0% {
+    -webkit-transform: translateX(-1000px) rotate(-720deg);
+            transform: translateX(-1000px) rotate(-720deg);
+    -webkit-filter: blur(50px);
+            filter: blur(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) rotate(0deg);
+            transform: translateX(0) rotate(0deg);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes rollinleft {
+  0% {
+    -webkit-transform: translateX(-1000px) rotate(-720deg);
+            transform: translateX(-1000px) rotate(-720deg);
+    -webkit-filter: blur(50px);
+            filter: blur(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) rotate(0deg);
+            transform: translateX(0) rotate(0deg);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+
 .App-link {
   color: #61dafb;
 }
@@ -103,7 +144,36 @@ a {
   font-family: 'Cute Font';
   color: whitesmoke;
   background-color: black;
+  
 }
+
+.bannerHeader{
+  font-size: 1em;
+  font-weight: bold;
+  font-family: 'Cute Font';
+  -webkit-animation: roll-in-blurred-left 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  animation: roll-in-blurred-left 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+@keyframes roll-in-blurred-left {
+  0% {
+    -webkit-transform: translateX(-1000px) rotate(-720deg);
+            transform: translateX(-1000px) rotate(-720deg);
+    -webkit-filter: blur(50px);
+            filter: blur(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) rotate(0deg);
+            transform: translateX(0) rotate(0deg);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
+
+
 
 /* //////////////////////// VIDEO ////////////////////////////// */
 .jumbotron {
@@ -287,7 +357,7 @@ a {
 }
 
 .hiringHeader{
-  font-family: 'Cute Font';
+  /* font-family: 'Cute Font'; */
   font-size: 5em;
 }
 

@@ -46,7 +46,6 @@ go on Stackd and not only can he save articles for future reference, but he can 
 <img src="client/src/Images&Video/erd.png"> 
 
 
-
 ## Components / Pages 
 - Components
 Used a Loading Component which displays the logo as the page loads.

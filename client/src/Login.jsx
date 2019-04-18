@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import { Button, Card, Col, InputGroup, Row } from 'react-bootstrap';
+import {Card} from 'react-bootstrap';
 import {ReactComponent as Logo} from './Images&Video/logo.svg';
+import Footer from "./Components/Footer"
 
 class Login extends Component {
     constructor(props) {
@@ -52,6 +53,7 @@ class Login extends Component {
 
     render() {
         return (
+            <div className="footerDiv">
             <div className='Login'>
                 {/* <Card className="loginCard"> */}
                                 <Logo />
@@ -66,6 +68,8 @@ class Login extends Component {
                                     </form>
                             </Card>
                 {/* </Card> */}
+            </div>
+            <Footer /> 
             </div>
         )
     }

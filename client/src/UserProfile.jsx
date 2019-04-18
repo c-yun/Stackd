@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import axios from "axios"
 import { Button, Card, Col } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import {faUserAstronaut} from "@fortawesome/free-solid-svg-icons";
-import { library } from '@fortawesome/fontawesome-svg-core';
+
+
 
 // library.add(faUserAstronaut)
 
@@ -88,8 +87,7 @@ handleChange = (e) => {
     })
 }
 
-render(){
-    let selectArticle; 
+render(){ 
     let articles = this.state.articles.map((article, index) => (
         <div key={index} className="savedArticles" >
         <Card onClick={() => this.selectArticle(article)}>  
