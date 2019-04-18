@@ -55,15 +55,14 @@ class Login extends Component {
             <div className='Login'>
                 {/* <Card className="loginCard"> */}
                                 <Logo />
-                                
-                                <p> Connecting You To The Latest Tech Trends </p>
+                                <p className="slogan"> Connecting You To The Latest Tech Trends </p>
                             <Card>
                                 {/* <h1 className="headerLogin"> Stackd </h1> */}
                                 <h3 className="headerLogin">Log into your account</h3>
-                                    <form onSubmit={this.handleSubmit}>
+                                    <form className="loginForm" onSubmit={this.handleSubmit}>
                                         <input onChange={this.handleEmailChange} value={this.state.email} type='email' name='email' placeholder='Enter your email...' /><br />
                                         <input onChange={this.handlePasswordChange} value={this.state.password} type='password' name='password' placeholder='Enter your password...' /><br />
-                                        <Button> <input type ='submit' value='Log In!' /> </Button>
+                                        <input type ='submit' value='Log In!' /> 
                                     </form>
                             </Card>
                 {/* </Card> */}

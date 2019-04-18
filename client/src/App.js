@@ -151,20 +151,20 @@ signUpClick = (e) =>{
         <>
           <div className='logboxContainer'>
             <div className='logboxLoginDiv'>
-              <Button variant="primary"
+              <h4 variant="primary"
                 className={`${
                   this.state.loginSelected ? 'loginText' : 'loginTextSelected'
                 }`} onClick={this.loginClick}>
                 Login
-              </Button>
-              <Button variant="primary"
+              </h4>
+              <h4 variant="primary"
                 className={`${
                   this.state.loginSelected ? 'signupText' : 'signupTextSelected'
                 }`}
                 onClick={this.signUpClick}
               >
                 Register
-              </Button>
+              </h4>
             </div>
             <Signup liftTokenToState={this.liftTokenToState} />
           </div>
@@ -183,10 +183,10 @@ signUpClick = (e) =>{
                 <Navbar bg="dark" variant="dark">
                   {/* <Navbar.Brand href="/" className='brand'>Stackd</Navbar.Brand> */}
                     <Nav className="mr-auto">
-                      <Nav.Link href="/">Home</Nav.Link>
-                      <Nav.Link href="/school">Involvement</Nav.Link>
-                      <Nav.Link href="/trending">Trending</Nav.Link>
-                      <Nav.Link href="/library">Library</Nav.Link>
+                      <Nav.Link href="/">Home {""} </Nav.Link> 
+                      <Nav.Link href="/school">Involvement {""} </Nav.Link>
+                      <Nav.Link href="/trending">Trending {""} </Nav.Link>
+                      <Nav.Link href="/library">Library {""} </Nav.Link>
                       <Nav.Link href={`/profile/${this.state.user._id}`}>Profile</Nav.Link>
                   </Nav>
                 </Navbar>
