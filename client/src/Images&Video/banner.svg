@@ -1,0 +1,15 @@
+<svg width="916px" height="210px" viewBox="0 0 916 210" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-4">
+            <rect id="Rectangle" fill="#000000" x="0" y="0" width="916" height="210"></rect>
+            <g id="Group-3" transform="translate(377.000000, 37.000000)" fill="#FFB347" opacity="0.25" stroke="#FDF6C5" stroke-width="7.8125">
+                <ellipse id="Oval" cx="82" cy="89" rx="82" ry="47"></ellipse>
+                <ellipse id="Oval" cx="82" cy="68" rx="82" ry="47"></ellipse>
+                <ellipse id="Oval-2" cx="82" cy="47" rx="82" ry="47"></ellipse>
+            </g>
+            <text id="Stackd" font-family="CuteFont-Regular, Cute Font" font-size="160" font-weight="normal" fill="#F5F5F5">
+                <tspan x="299" y="139">Stackd</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
