@@ -117,7 +117,8 @@
 .footerH3{
   text-align: center;
 vertical-align: middle;
-line-height: 2em; 
+line-height: 1em; 
+background-color: grey;
 } 
 
 a {
@@ -242,6 +243,10 @@ a {
   height: 100%
 }
 
+.profile{
+  font-size: 5em;
+
+}
 /* //////////////////////////////// UPDATE PROFILE ///////////////////////////////// */
 
 .UpdateProfile {

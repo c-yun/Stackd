@@ -136,6 +136,7 @@ render(){
     ///////////////////////////////////////////// RETURN ////////////////////////////////////////////////////////////
     return (
         <div className='UserProfile'>
+        <h4 className="profile"> Profile </h4>
             <section>
                 <header>
                     {this.props.user && (<Link to='/profile/update'></Link>)}

@@ -34,11 +34,7 @@
 
 
 
-## User Stories
-- Bob loves to stay connected with the world and enjoys the tech industry, however; he doesn't want to be constantly notified about other topics except tech. Bob decides to
-go on Stackd and not only can he save articles for future reference, but he can also check out what the latest tech trends in the programing industry. 
-
-## User Stories 
+## User Story
 - Charles loves to be up to date on the latest tech trends. He also loves to connect and share with his friends on social media. The each one teach on mentality, however;  he does not like to be bogged down by spam mail from the media sources and wants to keep track of which articles he really engaged with. With that being said, Charles downloads the app Stackd. A tech news hub app that grabs tech news from 3 different tech media companies and displays them neatly on one page. Which then he can save to his profile and connect with his friends about what he read. Charles is happy. Charles is Stackd. 
 
 
@@ -48,16 +44,18 @@ go on Stackd and not only can he save articles for future reference, but he can 
 
 ## Components / Pages 
 - Components
-Used a Loading Component which displays the logo as the page loads.
+   - Used a Loading Component which displays the logo as the page loads.
+   - Used a Loading Footer Component at the bottom of the page. 
+
 
 - Pages
-Signup: Registration for new users
-Login: Login for current users
-Home: Homepage that features a Jumbotron and top featured articles from the tech industry
-School: Top coding bootcamps
-Trending: Hiring and technology trends
-Library: Links to numerous resources such as programming languages, media, and tools.
-UserProfile: A user's profile page where the user can save articles and update their bio
+   - Signup: Registration for new users
+   - Login: Login for current users
+   - Home: Homepage that features a Jumbotron and top featured articles from the tech industry
+   - School: Top coding bootcamps
+   - Trending: Hiring and technology trends
+   - Library: Links to numerous resources such as programming languages, media, and tools.
+   - UserProfile: A user's profile page where the user can save articles and update their bio
 
 ## Planning 
 <img src="client/src/Images&Video/trello.png"> 
