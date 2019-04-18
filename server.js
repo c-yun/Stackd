@@ -47,7 +47,7 @@ const signupLimiter = new RateLimit({
     delayMs: 0, // disabled
     message: 'Maximum accounts created. Please try again later.'
 })
-mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true });
+mongoose.connect(process.env.MONGOLAB_BRONZE_URI, { useMongoClient: true });
 // mongoose.connect('mongodb://localhost/jwtAuth', {useNewUrlParser: true});
 const db = mongoose.connection;
 db.once('open', () => {
