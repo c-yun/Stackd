@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Signup from './Signup';
+// import Footer from "./Components/Footer"
 import Home from "./Home"; 
 import Library from "./Library"
 import School from "./School"
@@ -8,15 +9,18 @@ import Trending from "./Trending"
 import Login from './Login';
 import UserProfile from './UserProfile';
 import UpdateProfile from './UpdateProfile';
-import {BrowserRouter, Route, Link} from "react-router-dom"
+import {BrowserRouter, Route} from "react-router-dom"
 import axios from 'axios';
 import {schools} from './data/schools';
-import {Card, Button, Row, Col, Jumbotron, Container, Nav, Navbar} from "react-bootstrap"
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { Nav, Navbar} from "react-bootstrap"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChartLine, faGraduationCap, faHome, faUserNinja, faBook} from '@fortawesome/free-solid-svg-icons';
 
-import Header from './Components/Header';
-import Footer from "./Components/Footer"
+
 import Loading from './Components/Loading';
 
+library.add(faChartLine, faGraduationCap, faHome, faBook, faUserNinja)
 
 
 class App extends Component {
@@ -133,7 +137,6 @@ signUpClick = (e) =>{
     }
     // let contents;
     let logbox;
-    let logger; 
     if(this.state.loginSelected === true){
       logbox = (
         <div className="ifLogbox">
@@ -183,11 +186,21 @@ signUpClick = (e) =>{
                 <Navbar bg="dark" variant="dark">
                   {/* <Navbar.Brand href="/" className='brand'>Stackd</Navbar.Brand> */}
                     <Nav className="mr-auto">
-                      <Nav.Link href="/">Home {""} </Nav.Link> 
-                      <Nav.Link href="/school">Involvement {""} </Nav.Link>
-                      <Nav.Link href="/trending">Trending {""} </Nav.Link>
-                      <Nav.Link href="/library">Library {""} </Nav.Link>
-                      <Nav.Link href={`/profile/${this.state.user._id}`}>Profile</Nav.Link>
+                      <Nav.Link href="/">
+                        <FontAwesomeIcon className="fontAwe" size="2x" icon="home"/>{""} 
+                      </Nav.Link> 
+                      <Nav.Link href="/school">  
+                        <FontAwesomeIcon className="fontAwe" size="2x" icon="graduation-cap"/>{""} 
+                      </Nav.Link>
+                      <Nav.Link href="/trending">
+                        <FontAwesomeIcon className="fontAwe" size="2x" icon="chart-line"/>{""} 
+                      </Nav.Link>
+                      <Nav.Link href="/library">
+                        <FontAwesomeIcon className="fontAwe" size="2x" icon="book"/>{""} 
+                      </Nav.Link>
+                      <Nav.Link href={`/profile/${this.state.user._id}`}>
+                        <FontAwesomeIcon className="fontAwe" size="2x" icon="user-ninja"/>{""} 
+                      </Nav.Link>
                   </Nav>
                 </Navbar>
             </nav>
@@ -213,6 +226,7 @@ signUpClick = (e) =>{
       <div className="App">
           <div className='contentBox'>
               {contents}
+            
             </div>
       </div>
     );
@@ -226,9 +240,6 @@ function loadingScreen() {
 
 
 
-// <Route path='/' exact render={() => (<Home user={this.state.user} logout={this.logout} />)} />
 
 
-{/* // {`${this.state.loginSelected ? 'signupText' : 'signupTextSelected'}`}onClick={this.signUpClick} */}
-{/* // // {`${this.state.loginSelected ? 'loginText' : 'loginTextSelected'}`} */}
 export default App;

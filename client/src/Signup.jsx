@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import { Button, Card, Col, InputGroup, Row,} from 'react-bootstrap';
+import Footer from "./Components/Footer"
+import { Card} from 'react-bootstrap';
 import {ReactComponent as Logo} from './Images&Video/logo.svg';
 
 class Signup extends Component {
@@ -73,6 +74,7 @@ class Signup extends Component {
 
     render() {
         return (
+            <div className="footerDiv">
             <div className='Signup'>
                 <br /> 
                 <Logo />
@@ -88,6 +90,8 @@ class Signup extends Component {
                             <input type='submit' className="submitBtn" value='Sign Up!' />
                     </form>
                 </Card>
+            </div>
+            <Footer /> 
             </div>
         )
     }
