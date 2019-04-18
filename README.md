@@ -23,7 +23,7 @@ what is currently hot in the market. Stackd also provides data on what programmi
 Stackd is so the tech loving user does not have to leave the platform. A all in one tech news hub. 
 
 
-## User Storys 
+## User Stories
 - Bob loves to stay connected with the world and enjoys the tech industry, however; he doesn't want to be constantly notified about other topics except tech. Bob decides to
 go on Stackd and not only can he save articles for future reference, but he can also check out what the latest tech trends in the programing industry. 
 
@@ -33,6 +33,17 @@ go on Stackd and not only can he save articles for future reference, but he can 
 
 
 ## Components / Pages 
+- Components
+Used a Loading Component which displays the logo as the page loads.
+
+- Pages
+Signup: Registration for new users
+Login: Login for current users
+Home: Homepage that features a Jumbotron and top featured articles from the tech industry
+School: Top coding bootcamps
+Trending: Hiring and technology trends
+Library: Links to numerous resources such as programming languages, media, and tools.
+UserProfile: A user's profile page where the user can save articles
 
 
 
