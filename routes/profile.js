@@ -73,26 +73,6 @@ router.delete("/:userId/articles/:id", (req, res) => {
 
 
 
-// router.put("/:userId/edit", (req, res) => {
-//    console.log("this is the backend route")
-//    User.findByIdAndUpdate(
-//       req.params.userId,
-//       {
-//          bio:req.body.bio,
-//       }, 
-//       {new: true},
-//       (err, profile) => {
-//          if(err){
-//             return res.status(500).send(err);
-//          } else {
-//             return res.status(203).json(profile)
-//          }
-//       }
-//    )
-// })
-
-
-
 
 
 
