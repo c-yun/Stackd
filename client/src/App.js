@@ -30,6 +30,7 @@ class App extends Component {
       bootcamp: {schools},
       loading: true,
       loginSelected: false,
+      articles: []
     }
     this.liftTokenToState = this.liftTokenToState.bind(this)
     this.checkForLocalToken = this.checkForLocalToken.bind(this)
@@ -213,6 +214,7 @@ signUpClick = (e) =>{
       <div className="App">
           <div className='contentBox'>
               {contents}
+              {/* {logbox} */}
             </div>
       </div>
     );
