@@ -2,7 +2,8 @@ import React, {Component} from "react";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faReact, faPython, faJsSquare, faJava, faGithub, faMedium, faLinkedinIn, faTwitter, faStackOverflow, faCodepen, faFreeCodeCamp } from "@fortawesome/free-brands-svg-icons";
-import { Button, Card, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+
 
 
 library.add(faReact, faPython, faJsSquare, faJava, faGithub, faMedium, faLinkedinIn, faTwitter, faStackOverflow, faCodepen, faFreeCodeCamp)
@@ -63,6 +64,8 @@ class Library extends Component {
             </Row>
             </div>
          </div>
+            // <Footer /> 
+
       )
    }
 }

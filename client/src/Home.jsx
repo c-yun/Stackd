@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 // require('dotenv').config();
-import {Card, Button, Row, Col, Jumbotron, Container, CardGroup, CardDeck, Image , Alert} from "react-bootstrap"
+import {Card, Button, Row, Col, Jumbotron, Alert} from "react-bootstrap"
 import axios from 'axios';
 import Vid from "./Images&Video/stacdVideo.mp4"
 import { faBookmark, faStar} from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Footer from "./Components/Footer"
 
 // import {Grid } from "semantic-ui-react"
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faBookmark, faStar)
+
 function simulateNetworkRequest() {
    return new Promise(resolve => setTimeout(resolve, 2000));
 }
@@ -88,7 +89,6 @@ iconBookmarkPicked = (e) => {
 
 render(){
    const { isLoading } = this.state;
-   let bookmarkIcon;
    if(this.state.savedBookmark === false) {
       console.log("bookmark selected")
       return(
@@ -150,6 +150,7 @@ render(){
          {/* <h1> Hello stuf here </h1> */}
       </Row>
    </div>
+      <Footer /> 
 </div>
    
    
