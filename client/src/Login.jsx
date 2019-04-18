@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { Button, Card, Col, InputGroup, Row } from 'react-bootstrap';
+import {ReactComponent as Logo} from './Images&Video/logo.svg';
 
 class Login extends Component {
     constructor(props) {
@@ -53,26 +54,17 @@ class Login extends Component {
         return (
             <div className='Login'>
                 {/* <Card className="loginCard"> */}
-                    <Row>
-                        <Col>
-                            <div className="logoImageBox">
-                                <h1> Image Box </h1>
-                                <p> Image goes here </p>
-                            </div>
-                        </Col>
-                        <Col>
+                                <Logo />
+                                <p className="slogan"> Connecting You To The Latest Tech Trends </p>
                             <Card>
-                                <h1 className="headerLogin"> Stackd </h1>
-                                <p> Connecting You To The Latest Tech Trends </p>
+                                {/* <h1 className="headerLogin"> Stackd </h1> */}
                                 <h3 className="headerLogin">Log into your account</h3>
-                                    <form onSubmit={this.handleSubmit}>
+                                    <form className="loginForm" onSubmit={this.handleSubmit}>
                                         <input onChange={this.handleEmailChange} value={this.state.email} type='email' name='email' placeholder='Enter your email...' /><br />
                                         <input onChange={this.handlePasswordChange} value={this.state.password} type='password' name='password' placeholder='Enter your password...' /><br />
-                                        <input type ='submit' value='Log In!' />
+                                        <input type ='submit' value='Log In!' /> 
                                     </form>
                             </Card>
-                        </Col>
-                    </Row>
                 {/* </Card> */}
             </div>
         )

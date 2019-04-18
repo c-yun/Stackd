@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import { Button, Card, Col, InputGroup, Row,} from 'react-bootstrap';
+import {ReactComponent as Logo} from './Images&Video/logo.svg';
 
 class Signup extends Component {
     constructor(props) {
@@ -72,17 +74,20 @@ class Signup extends Component {
     render() {
         return (
             <div className='Signup'>
-                <h1 className="headerSignUp">Stackd </h1>
-                    <p> Connecting You To The Latest Tech Trends </p>
-                <h3 className="headerSignUp">Create a new account:</h3>
-                <form onSubmit={this.handleSubmit}>
-                    <input onChange={this.handleNameChange} value={this.state.name} type='text' name='name' placeholder='First And Last Name..' /><br />
-                    <input onChange={this.handleEmailChange} value={this.state.email} type='email' name='email' placeholder='Your email...' /><br />
-                    <input onChange={this.handlePasswordChange} value={this.state.password} type='password' name='password' placeholder='Choose a password...' /><br />
-                    <input onChange={this.handleBioChange} value={this.state.bio} type='bio' name='bio' placeholder='About Me...' /><br />
-                    {/* // bio added here  */}
-                    <input type='submit' value='Sign Up!' />
-                </form>
+                <br /> 
+                <Logo />
+                    <p className="slogan"> Connecting You To The Latest Tech Trends </p>
+                    <Card>
+                        <form onSubmit={this.handleSubmit} className="formSignup">
+                            <h3 className="headerSignUp">Create a new account:</h3>
+                            <input onChange={this.handleNameChange} value={this.state.name} type='text' name='name' placeholder='First And Last Name..' /><br />
+                            <input onChange={this.handleEmailChange} value={this.state.email} type='email' name='email' placeholder='Your email...' /><br />
+                            <input onChange={this.handlePasswordChange} value={this.state.password} type='password' name='password' placeholder='Choose a password...' /><br />
+                            <input onChange={this.handleBioChange} value={this.state.bio} type='bio' name='bio' placeholder='About Me...' /><br />
+                            {/* // bio added here  */}
+                            <input type='submit' className="submitBtn" value='Sign Up!' />
+                    </form>
+                </Card>
             </div>
         )
     }
