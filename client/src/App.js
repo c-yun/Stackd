@@ -180,10 +180,9 @@ signUpClick = (e) =>{
       contents = (
       <BrowserRouter>
         <div className="homeBox">
-          <div className='banner'>Stackd</div>
           <div className="banner">
             <h1 className="bannerHeader">Stackd</h1>
-            </div>
+          </div>
             <div className="navBarBox">
               <nav>
                 <Navbar bg="dark" variant="dark">
