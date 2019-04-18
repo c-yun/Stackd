@@ -9,7 +9,6 @@ library.add(faReact, faPython, faJsSquare, faJava)
 
 
 export default class Trending extends PureComponent {
-static jsfiddleUrl = 'https://jsfiddle.net/alidingling/w9fyL4uh/';
 
 React = [
    {

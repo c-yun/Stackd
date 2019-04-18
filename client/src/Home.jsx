@@ -44,11 +44,11 @@ componentDidMount(){
 
 handleClick() {
    this.setState({ isLoading: true }, () => {
-     simulateNetworkRequest().then(() => {
-       this.setState({ isLoading: false });
-     });
+      simulateNetworkRequest().then(() => {
+      this.setState({ isLoading: false });
+      });
    });
-   }
+}
 
 
 
@@ -121,8 +121,8 @@ render(){
                   <Card.Link href={article.url}><Button>Article</Button></Card.Link>
                      </Col>
                      <Col>
-                     <div onClick={() => this.addToProfile(article)} className="bookmark">
-                     <Button variant="primary" disabled={isLoading} onClick={!isLoading ? this.handleClick : null}> {isLoading ? 'Saved!' : 'Click to Save'} </Button>
+                        <div onClick={() => this.addToProfile(article)} className="bookmark">
+                        <Button variant="primary" disabled={isLoading} onClick={!isLoading ? this.handleClick : null}> {isLoading ? 'Saved!' : 'Click to Save'} </Button>
                      </div>
                      </Col>
                   </Row>
