@@ -103,7 +103,7 @@ app.use('/locked', expressJWT({secret: process.env.JWT_SECRET}).unless({method: 
 
 app.get('*', function(req, res) {
     res.sendFile(__dirname + '/client/build/index.html');
-    });
+});
 
 app.listen(process.env.PORT, () => {
     console.log(`You're listening to the sweet sounds of port ${process.env.PORT} in the morning...`);
