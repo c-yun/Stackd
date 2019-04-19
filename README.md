@@ -29,13 +29,13 @@
 
 
 ## What is Stackd? 
-- Stackd is a tech news app that allows user to create a account and access tech news articles from 3 different tech media companies. Stackd also allows users to check out what is hot in the market regarding current trends of programing languages, video game popularity, and other data. With that being said, a user can save an article to there profile as well as update his or her bio. Letting them connect with others and share what they have saved and how they are. Your all in one app for all of your tech needs. 
+- Stackd is a tech news app that allows user to create a account and access tech news articles from 3 different tech media companies. Stackd also allows users to check out what is hot in the market regarding current trends of programing languages, video game popularity, and other data. With that being said, a user can save an article to their profile as well as update his or her bio. Letting them connect with others and share what they have saved and how they are. Your all in one app for all of your tech needs. 
 
 
 
 
 ## User Story
-- Charles loves to be up to date on the latest tech trends. He also loves to connect and share with his friends on social media. The each one teach on mentality, however;  he does not like to be bogged down by spam mail from the media sources and wants to keep track of which articles he really engaged with. With that being said, Charles downloads the app Stackd. A tech news hub app that grabs tech news from 3 different tech media companies and displays them neatly on one page. Which then he can save to his profile and connect with his friends about what he read. Charles is happy. Charles is Stackd. 
+- Charles loves to be up to date on the latest tech trends. He also loves to connect and share with his friends on social media. The each one teach one mentality, however;  he does not like to be bogged down by spam mail from the media sources and wants to keep track of which articles he really engaged with. With that being said, Charles downloads the app Stackd. A tech news hub app that grabs tech news from 3 different tech media companies and displays them neatly on one page. Which then he can save to his profile and connect with his friends about what he read. Charles is happy. Charles is Stackd. 
 
 
 ## Entity Relation Diagram 
