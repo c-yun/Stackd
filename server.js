@@ -29,6 +29,7 @@ const storage = cloudinaryStorage({
 
 const parser = multer({storage: storage});
 
+app.use(express.static(__dirname + '/client/build'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(helmet());
@@ -46,7 +47,7 @@ const signupLimiter = new RateLimit({
     delayMs: 0, // disabled
     message: 'Maximum accounts created. Please try again later.'
 })
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect(process.env.MONGOLAB_BRONZE_URI, { useMongoClient: true });
 // mongoose.connect('mongodb://localhost/jwtAuth', {useNewUrlParser: true});
 const db = mongoose.connection;
 db.once('open', () => {
@@ -88,6 +89,8 @@ app.post('/UpdateProfile', parser.single('myPic'), (req,res) => {
     ).catch((err) => console.log(err));
 });
 
+
+
 app.use("/profile", require("./routes/profile"));
 
 app.use('/auth/login', loginLimiter);
@@ -97,6 +100,10 @@ app.use('/auth/signup', signupLimiter);
 app.use('/auth', require('./routes/auth'));
 
 app.use('/locked', expressJWT({secret: process.env.JWT_SECRET}).unless({method: 'POST'}), require('./routes/locked'));
+
+app.get('*', function(req, res) {
+    res.sendFile(__dirname + '/client/build/index.html');
+});
 
 app.listen(process.env.PORT, () => {
     console.log(`You're listening to the sweet sounds of port ${process.env.PORT} in the morning...`);
