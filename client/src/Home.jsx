@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // require('dotenv').config();
 import {Card, Button, Row, Col, Jumbotron, Alert} from "react-bootstrap"
 import axios from 'axios';
-import Vid from "./Images&Video/stacdVideo.mp4"
+import Vid from "./Images&Video/stackdVideo.mp4"
 import { faBookmark, faStar} from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import Footer from "./Components/Footer"

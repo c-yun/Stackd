@@ -117,7 +117,8 @@
 .footerH3{
   text-align: center;
 vertical-align: middle;
-line-height: 2em; 
+line-height: 1em; 
+background-color: grey;
 } 
 
 a {
@@ -179,7 +180,8 @@ a {
 .jumbotron {
   position: relative;
   z-index: -2;
-  height: 62.5vh;
+  height: 70vh;
+  width: auto%; 
   background-color: white;
   /* padding: 0px !important; */
 }
@@ -242,6 +244,10 @@ a {
   height: 100%
 }
 
+.profile{
+  font-size: 5em;
+
+}
 /* //////////////////////////////// UPDATE PROFILE ///////////////////////////////// */
 
 .UpdateProfile {
