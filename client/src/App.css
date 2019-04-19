@@ -180,7 +180,8 @@ a {
 .jumbotron {
   position: relative;
   z-index: -2;
-  height: 62.5vh;
+  height: 70vh;
+  width: auto%; 
   background-color: white;
   /* padding: 0px !important; */
 }
